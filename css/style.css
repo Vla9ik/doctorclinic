@@ -294,6 +294,10 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
   position: relative;
   min-height: 68px;
   overflow-x: hidden;
