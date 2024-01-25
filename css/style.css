@@ -286,7 +286,7 @@ body {
 
 .menu__socials {
   min-height: 68px;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-right: -0.9375rem;
   margin-left: -0.9375rem;
   margin-top: auto;
