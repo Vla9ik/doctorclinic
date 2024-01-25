@@ -896,6 +896,7 @@ details > summary::-webkit-details-marker {
 }
 
 .spoller-menu__body {
+  margin-top: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -904,6 +905,17 @@ details > summary::-webkit-details-marker {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 0.625rem;
+}
+
+.spoller-menu__body a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.spoller-menu__body a:not(:last-child) {
+  margin-bottom: 0.3125rem;
 }
 
 .footer {
