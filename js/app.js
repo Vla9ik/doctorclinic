@@ -378,6 +378,10 @@
             document.documentElement.classList.toggle("search-open");
             e.preventDefault();
         } else if (!targetElement.closest(".header__container")) document.documentElement.classList.remove("search-open");
+        if (targetElement.closest(".service-menu__btn")) {
+            document.documentElement.classList.toggle("service-menu-open");
+            e.preventDefault();
+        }
     }));
     window["FLS"] = true;
     isWebp();
