@@ -376,8 +376,16 @@
         const targetElement = e.target;
         if (targetElement.closest(".search__btn")) {
             document.documentElement.classList.toggle("search-open");
+            if (!document.documentElement.classList.contains("search-open")) {
+                const searchInput = document.querySelector(".search__input");
+                if (searchInput) searchInput.value = "";
+            }
             e.preventDefault();
-        } else if (!targetElement.closest(".header__container")) document.documentElement.classList.remove("search-open");
+        } else if (!targetElement.closest(".header__container")) {
+            const searchInput = document.querySelector(".search__input");
+            if (searchInput) searchInput.value = "";
+            document.documentElement.classList.remove("search-open");
+        }
         if (targetElement.closest(".service-menu__btn")) {
             document.documentElement.classList.toggle("service-menu-open");
             e.preventDefault();
