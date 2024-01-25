@@ -194,6 +194,10 @@ body {
   padding: 0 0.9375rem;
 }
 
+.menu {
+  overflow-x: hidden;
+}
+
 .menu__body {
   background-color: #131923;
   display: -webkit-box;
