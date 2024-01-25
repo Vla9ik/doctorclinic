@@ -383,6 +383,21 @@
             e.preventDefault();
         }
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const firstItem = document.querySelector(".service-menu__item");
+        if (firstItem) firstItem.classList.add("active");
+        function handleMouseOver(e) {
+            const targetElement = e.target.closest(".service-menu__item");
+            if (!targetElement) return;
+            const currentActive = document.querySelector(".service-menu__item.active");
+            if (currentActive && currentActive !== targetElement) currentActive.classList.remove("active");
+            targetElement.classList.add("active");
+        }
+        const menuItems = document.querySelectorAll(".service-menu__item");
+        menuItems.forEach((item => {
+            item.addEventListener("mouseover", handleMouseOver);
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
