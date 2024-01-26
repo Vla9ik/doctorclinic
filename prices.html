@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240126004628">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240126031726">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -193,11 +193,11 @@
 									</ul>
 								</div>
 							</li>
-							<li class="menu__item"><a href="" class="menu__link">Цены</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Специалисты</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Наши работы</a></li>
-							<li class="menu__item"><a href="" class="menu__link">О клинике</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+							<li class="menu__item"><a href="prices.html" class="menu__link">Цены</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Специалисты</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Наши работы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">О клинике</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
 						</ul>
 						<ul data-spollers data-one-spoller class="menu__list  menu__list_mobile">
 							<li class="menu__item">
@@ -211,7 +211,7 @@
 									</div>
 								</details>
 							</li>
-							<li class="menu__item"><a href="prices.html" class="menu__link"><img src="img/icons/menu-icons/prices.svg" alt="icon"><span>Цены</span></a></li>
+							<li class="menu__item"><a href="#" class="menu__link"><img src="img/icons/menu-icons/prices.svg" alt="icon"><span>Цены</span></a></li>
 							<li class="menu__item"><a href="" class="menu__link"><img src="img/icons/menu-icons/specialists.svg" alt="icon"><span>Специалисты</span></a></li>
 							<li class="menu__item">
 								<img src="img/icons/menu-icons/portfolio.svg" alt="icon">
@@ -254,15 +254,21 @@
 
 
 		<main class="page">
-			<div class="price-block">
+			<div class="page__price-block price-block">
 				<div class="price-block__container">
 					<h1 class="price-block__title title">
 						Цены
 					</h1>
-					<div data-spollers class="price-block__content">
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Пластическая хирургия</summary>
-							<div data-spollers class="price-block__parts parts-block">
+					<div data-spollers class="price-block__content spollers">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Пластическая хирургия</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
+								<ul class="parts-block__list">
+									<li class="parts-block__item parts-block__item_mod">
+										<div class="parts-block__procedure">Консультация пластического хирурга</div>
+										<div class="parts-block__value">Бесплатно</div>
+									</li>
+								</ul>
 								<details class=" parts-block__spoller">
 									<summary class=" parts-block__title">Грудь</summary>
 									<div class="parts-block__body">
@@ -362,6 +368,9 @@
 											<li class="parts-block__item">
 												<div class="parts-block__procedure">Удаление имплантов (без капсулы)</div>
 												<div class="parts-block__value">127 000 ₽</div>
+											</li>
+											<li class="parts-block__label">
+												* – Без стоимости имплантов и компрессионного белья
 											</li>
 										</ul>
 									</div>
@@ -500,9 +509,9 @@
 								</details>
 							</div>
 						</details>
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Эстетическая косметология</summary>
-							<div data-spollers class="price-block__parts parts-block">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Эстетическая косметология</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
 								<details class=" parts-block__spoller">
 									<summary class=" parts-block__title">Лицо</summary>
 									<div class="parts-block__body">
@@ -516,9 +525,9 @@
 								</details>
 							</div>
 						</details>
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Гинекология</summary>
-							<div data-spollers class="price-block__parts parts-block">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Гинекология</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
 								<details class=" parts-block__spoller">
 									<summary class=" parts-block__title">Грудь</summary>
 									<div class="parts-block__body">
@@ -532,9 +541,9 @@
 								</details>
 							</div>
 						</details>
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Флебология</summary>
-							<div data-spollers class="price-block__parts parts-block">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Флебология</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
 								<details class=" parts-block__spoller">
 									<summary class=" parts-block__title">Грудь</summary>
 									<div class="parts-block__body">
@@ -548,9 +557,9 @@
 								</details>
 							</div>
 						</details>
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Анализы</summary>
-							<div data-spollers class="price-block__parts parts-block">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Анализы</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
 								<details class=" parts-block__spoller">
 									<summary class=" parts-block__title">Грудь</summary>
 									<div class="parts-block__body">
@@ -564,12 +573,12 @@
 								</details>
 							</div>
 						</details>
-						<details class="price-block__category">
-							<summary class="price-block__sub-title">Прайс-лист профессора Сергеева</summary>
-							<div data-spollers class="price-block__parts parts-block">
+						<details class="price-block__category spollers__item">
+							<summary class="price-block__sub-title spollers__title">Прайс-лист профессора Сергеева</summary>
+							<div data-spollers class="price-block__parts parts-block spollers__content">
 								<details class=" parts-block__spoller">
-									<summary class=" parts-block__title">Грудь</summary>
-									<div class="parts-block__body">
+									<summary class=" parts-block__title ">Грудь</summary>
+									<div class="parts-block__body ">
 										<ul class="parts-block__list">
 											<li class="parts-block__item">
 												<div class="parts-block__procedure">Увеличение груди (без стоимости имплантов, компрессионного белья)</div>
@@ -654,7 +663,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240126004628"></script>
+	<script src="js/app.min.js?_v=20240126031726"></script>
 </body>
 
 </html>
