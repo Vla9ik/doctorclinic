@@ -146,6 +146,15 @@ body {
   background-color: #131923;
 }
 
+.service-menu-open body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.service-menu-open body::-webkit-scrollbar {
+  display: none;
+}
+
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
@@ -719,7 +728,8 @@ textarea.input {
 }
 
 .page__price-block,
-.page__faq {
+.page__faq,
+.page__search {
   max-width: 89.5rem;
   margin: 0 auto;
   background-color: #fff;
@@ -823,6 +833,7 @@ textarea.input {
 
 .consultation-form__confidentiality a {
   text-decoration: underline;
+  padding-left: 0.1875rem;
 }
 
 .spollers {
@@ -952,6 +963,7 @@ textarea.input {
 }
 
 .header__tel {
+  white-space: nowrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1000,20 +1012,9 @@ textarea.input {
   color: #fff;
 }
 
-.search__input {
-  display: none;
-}
-
 .search-open .search__input {
-  z-index: 10;
+  width: 100%;
   display: block;
-  position: absolute;
-  width: 75%;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  left: 15px;
   background-color: #131923;
   padding: 1.25rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.2);
@@ -1043,6 +1044,22 @@ textarea.input {
 .search-open .search__input::placeholder {
   color: #817f7f;
   font-size: 1rem;
+}
+
+.search__form {
+  display: none;
+}
+
+.search-open .search__form {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  width: 75%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 15px;
 }
 
 details > summary {
@@ -1403,6 +1420,7 @@ details > summary::-webkit-details-marker {
   -webkit-column-gap: 2.5rem;
      -moz-column-gap: 2.5rem;
           column-gap: 2.5rem;
+  row-gap: 1.25rem;
 }
 
 .tabs-faq__title {
@@ -1535,6 +1553,93 @@ details > summary::-webkit-details-marker {
   font-weight: 400;
   line-height: 1.38;
   /* 137.5% */
+}
+
+.search-page__form {
+  display: -ms-grid;
+  display: grid;
+}
+
+.search-page__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(232, 232, 233, 0.5);
+  border-radius: 1.25rem;
+}
+
+.search-page__input {
+  background-color: transparent;
+}
+
+.search-page__button {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  /* 100% */
+  padding: 1.75rem 2.5rem;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #1e78ff;
+}
+
+.search-page__button::before {
+  display: none;
+}
+
+.search-page__results {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.search-page__results span {
+  color: #131923;
+  font-weight: 700;
+}
+
+.search-page__items {
+  display: -ms-grid;
+  display: grid;
+}
+
+.item-search {
+  display: -ms-grid;
+  display: grid;
+}
+
+.item-search__title {
+  color: #131923;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.item-search__text {
+  max-width: 43.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  /* 137.5% */
+}
+
+.item-search__link {
+  color: #1e78ff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.38;
 }
 
 @media (min-width: 47.99875em) {
@@ -1713,22 +1818,26 @@ details > summary::-webkit-details-marker {
 
 @media (min-width: 84.375em) {
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     padding-top: 5rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     padding-bottom: 12.5rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     margin-top: 11.875rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     border-radius: 5rem;
   }
 
@@ -1817,6 +1926,30 @@ details > summary::-webkit-details-marker {
 
   .question-block__title:not(:last-child) {
     margin-bottom: 2.5rem;
+  }
+
+  .search-page__title:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .search-page__form {
+    row-gap: 2.5rem;
+  }
+
+  .search-page__form:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .search-page__items {
+    row-gap: 5rem;
+  }
+
+  .item-search {
+    row-gap: 2rem;
+  }
+
+  .item-search__title {
+    font-size: 2.5rem;
   }
 }
 
@@ -2167,6 +2300,18 @@ details > summary::-webkit-details-marker {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
+
+  .search-page__button {
+    padding: 1.75rem;
+  }
+
+  .search-page__button span {
+    display: none;
+  }
+
+  .search-page__button::before {
+    display: block;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -2194,22 +2339,26 @@ details > summary::-webkit-details-marker {
 
 @media (max-width: 23.4375em) {
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     padding-top: 3rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     padding-bottom: 6.5rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     margin-top: 7.5rem;
   }
 
   .page__price-block,
-  .page__faq {
+  .page__faq,
+  .page__search {
     border-radius: 2rem;
   }
 
@@ -2305,6 +2454,30 @@ details > summary::-webkit-details-marker {
   .question-block__title:not(:last-child) {
     margin-bottom: 1.5rem;
   }
+
+  .search-page__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .search-page__form {
+    row-gap: 1.5rem;
+  }
+
+  .search-page__form:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .search-page__items {
+    row-gap: 3.5rem;
+  }
+
+  .item-search {
+    row-gap: 1.5rem;
+  }
+
+  .item-search__title {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 62em) and (max-width: 90em) {
@@ -2384,56 +2557,64 @@ details > summary::-webkit-details-marker {
 @media (min-width: 23.4375em) and (max-width: 84.375em) {
 @supports (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
     }
 }
 
 @supports not (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
 @supports (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
     }
 }
 
 @supports not (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
 @supports (margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem );
     }
 }
 
 @supports not (margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       margin-top: calc(7.5rem + 4.375 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
 @supports (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
     }
 }
 
 @supports not (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
     .page__price-block,
-    .page__faq {
+    .page__faq,
+    .page__search {
       border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -2695,6 +2876,78 @@ details > summary::-webkit-details-marker {
       margin-bottom: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
     }
 }
+
+@supports (margin-bottom: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .search-page__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .search-page__title:not(:last-child) {
+      margin-bottom: calc(2rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .search-page__form {
+      row-gap: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .search-page__form {
+      row-gap: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .search-page__form:not(:last-child) {
+      margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .search-page__form:not(:last-child) {
+      margin-bottom: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem )) {
+    .search-page__items {
+      row-gap: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem )) {
+    .search-page__items {
+      row-gap: calc(3.5rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem )) {
+    .item-search {
+      row-gap: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem )) {
+    .item-search {
+      row-gap: calc(1.5rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .item-search__title {
+      font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .item-search__title {
+      font-size: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
 }
 
 @media (min-width: 62.5em) and (max-width: 90em) {
@@ -2864,5 +3117,9 @@ details > summary::-webkit-details-marker {
   .tabs-faq__title:hover img {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
+  }
+
+  .search-page__button:hover {
+    background-color: #195cc2;
   }
 }

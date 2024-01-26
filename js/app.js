@@ -506,6 +506,23 @@
             item.addEventListener("mouseover", handleMouseOver);
         }));
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const searchForm = document.querySelector(".search__form");
+        if (searchForm) searchForm.addEventListener("submit", (function(event) {
+            event.preventDefault();
+            const searchInput = searchForm.querySelector(".search__input");
+            if (searchInput && searchInput.value) window.location.href = `/search-page.html/?q=${encodeURIComponent(searchInput.value)}`; else console.log("Поле поиска пустое или не найдено");
+        })); else console.log("Форма поиска не найдена");
+    }));
+    window.addEventListener("load", (function() {
+        const getSearchQuery = () => {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("q") || "";
+        };
+        const searchQuery = getSearchQuery();
+        const searchInput = document.querySelector(".search-page__input");
+        if (searchInput) searchInput.value = searchQuery;
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
