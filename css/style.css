@@ -1258,6 +1258,7 @@ textarea.input {
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
   left: 15px;
+  z-index: 21;
 }
 
 details > summary {
@@ -1878,9 +1879,6 @@ details > summary::-webkit-details-marker {
 }
 
 .error-block__content {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   text-align: center;
 }
 
@@ -2001,11 +1999,16 @@ details > summary::-webkit-details-marker {
           transform: rotate(-15.037deg) scale(0.5);
 }
 
+.changes-links__item:nth-last-child(2) .changes-links__image {
+  top: -100%;
+}
+
 .changes-links__item:last-child .changes-links__image {
   top: -280%;
 }
 
 .changes-links__image {
+  pointer-events: none;
   visibility: hidden;
   opacity: 0;
   width: 18.75rem;
@@ -4275,7 +4278,16 @@ details > summary::-webkit-details-marker {
             filter: grayscale(0);
   }
 
-  .changes-links__item:nth-child(odd) .changes-links__title:hover + .changes-links__image {
+  .changes-links__item:hover .changes-links__title::before {
+    background-color: #1e78ff;
+    color: #fff;
+    border: 0.0625rem solid #1e78ff;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  .changes-links__item:nth-child(odd):hover .changes-links__title + .changes-links__image {
     visibility: visible;
     opacity: 1;
     -webkit-transform: rotate(15.037deg) scale(1);
@@ -4283,21 +4295,12 @@ details > summary::-webkit-details-marker {
             transform: rotate(15.037deg) scale(1);
   }
 
-  .changes-links__item:nth-child(even) .changes-links__title:hover + .changes-links__image {
+  .changes-links__item:nth-child(even):hover .changes-links__title + .changes-links__image {
     visibility: visible;
     opacity: 1;
     -webkit-transform: rotate(-15.037deg) scale(1);
         -ms-transform: rotate(-15.037deg) scale(1);
             transform: rotate(-15.037deg) scale(1);
-  }
-
-  .changes-links__title:hover::before {
-    background-color: #1e78ff;
-    color: #fff;
-    border: 0.0625rem solid #1e78ff;
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
 
   .tabs-plasticsurgery__title:hover {
