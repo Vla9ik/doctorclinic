@@ -12,6 +12,7 @@
 
 .question-block__title::after,
 .parts-block__title::before,
+.changes-links__title::before,
 .pagging__arrow::before,
 .spollers__title::before,
 [class*=_icon-]:before {
@@ -515,9 +516,8 @@ textarea.input {
       align-content: start;
   row-gap: 1.5rem;
   width: 16.875rem;
-  height: 100%;
-  max-height: 53%;
-  overflow: auto;
+  height: 50%;
+  overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -737,7 +737,10 @@ textarea.input {
 
 .page__price-block,
 .page__faq,
-.page__search {
+.page__search,
+.page__error,
+.page__changes,
+.page__plasticsurgery-page {
   max-width: 89.5rem;
   margin: 0 auto;
   background-color: #fff;
@@ -758,7 +761,7 @@ textarea.input {
   font-weight: 700;
   line-height: 1;
   display: inline-block;
-  min-width: 220px;
+  min-width: 200px;
 }
 
 .btn_dark::after {
@@ -993,6 +996,108 @@ textarea.input {
 .pagging__item._active {
   color: #fff;
   background-color: #78dccd;
+}
+
+.changes-links {
+  display: -ms-grid;
+  display: grid;
+}
+
+.changes-links__item {
+  position: relative;
+  display: block;
+}
+
+.changes-links__item:not(:last-child) {
+  border-bottom: 0.0625rem solid #131923;
+}
+
+.changes-links__item:nth-child(odd) .changes-links__image {
+  -webkit-transform: rotate(15.037deg) scale(0.5);
+      -ms-transform: rotate(15.037deg) scale(0.5);
+          transform: rotate(15.037deg) scale(0.5);
+}
+
+.changes-links__item:nth-child(even) .changes-links__image {
+  -webkit-transform: rotate(-15.037deg) scale(0.5);
+      -ms-transform: rotate(-15.037deg) scale(0.5);
+          transform: rotate(-15.037deg) scale(0.5);
+}
+
+.changes-links__item:last-child .changes-links__image {
+  top: -280%;
+}
+
+.changes-links__image {
+  visibility: hidden;
+  opacity: 0;
+  width: 18.75rem;
+  height: 25rem;
+  aspect-ratio: 300/400;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0%;
+  right: 15%;
+}
+
+.changes-links__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.changes-links__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  color: #131923;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.changes-links__title::before {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  content: "\e900";
+  font-size: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4.5rem;
+          flex: 0 0 4.5rem;
+  border: 0.0625rem solid #131923;
+  border-radius: 50%;
+  -webkit-transform: rotate(-55deg);
+      -ms-transform: rotate(-55deg);
+          transform: rotate(-55deg);
 }
 
 .header {
@@ -1735,6 +1840,316 @@ details > summary::-webkit-details-marker {
   line-height: 1.38;
 }
 
+.error-page__container {
+  text-align: center;
+}
+
+.error-page__image {
+  max-width: 100%;
+}
+
+.error-page__image:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.error-page__label {
+  color: #131923;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.error-page__btn {
+  max-width: 12.5rem;
+}
+
+.error-block__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 1.25rem;
+}
+
+.error-block__content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.error-block__image {
+  max-width: 100%;
+}
+
+.error-block__image:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.error-block__img {
+  max-width: 100%;
+}
+
+.error-block__label {
+  color: #131923;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.error-block__btn {
+  max-width: 12.5rem;
+}
+
+.tabs-changes {
+  display: -ms-grid;
+  display: grid;
+}
+
+.tabs-changes__navigation {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.9375rem;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tabs-changes__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.tabs-changes__title._tab-active {
+  background-color: #78dccd;
+}
+
+.tabs-changes__title._tab-active span {
+  color: #fff;
+}
+
+.tabs-changes__title._tab-active img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.tabs-changes__title span {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 1.5rem;
+  color: rgba(19, 25, 35, 0.5);
+  text-align: right;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-changes__title img {
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.changes-links {
+  display: -ms-grid;
+  display: grid;
+}
+
+.changes-links__item {
+  position: relative;
+  display: block;
+}
+
+.changes-links__item:not(:last-child) {
+  border-bottom: 0.0625rem solid #131923;
+}
+
+.changes-links__item:nth-child(odd) .changes-links__image {
+  -webkit-transform: rotate(15.037deg) scale(0.5);
+      -ms-transform: rotate(15.037deg) scale(0.5);
+          transform: rotate(15.037deg) scale(0.5);
+}
+
+.changes-links__item:nth-child(even) .changes-links__image {
+  -webkit-transform: rotate(-15.037deg) scale(0.5);
+      -ms-transform: rotate(-15.037deg) scale(0.5);
+          transform: rotate(-15.037deg) scale(0.5);
+}
+
+.changes-links__item:last-child .changes-links__image {
+  top: -280%;
+}
+
+.changes-links__image {
+  visibility: hidden;
+  opacity: 0;
+  width: 18.75rem;
+  height: 25rem;
+  aspect-ratio: 300/400;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0%;
+  right: 15%;
+}
+
+.changes-links__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.changes-links__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  color: #131923;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.changes-links__title::before {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  content: "\e900";
+  font-size: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4.5rem;
+          flex: 0 0 4.5rem;
+  border: 0.0625rem solid #131923;
+  border-radius: 50%;
+  -webkit-transform: rotate(-55deg);
+      -ms-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+}
+
+.tabs-plasticsurgery {
+  display: -ms-grid;
+  display: grid;
+}
+
+.tabs-plasticsurgery__navigation {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.9375rem;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tabs-plasticsurgery__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.tabs-plasticsurgery__title._tab-active {
+  background-color: #78dccd;
+}
+
+.tabs-plasticsurgery__title._tab-active span {
+  color: #fff;
+}
+
+.tabs-plasticsurgery__title._tab-active img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.tabs-plasticsurgery__title span {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 1.5rem;
+  color: rgba(19, 25, 35, 0.5);
+  text-align: right;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-plasticsurgery__title img {
+  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 @media (min-width: 47.99875em) {
   .consultation-form__container {
     -ms-grid-columns: (1fr)[2];
@@ -1886,6 +2301,34 @@ details > summary::-webkit-details-marker {
   .question-block__body {
     padding-left: 3.5rem;
   }
+
+  .tabs-changes__title {
+    min-height: 104px;
+    height: 100%;
+  }
+
+  .tabs-changes__title img {
+    display: block;
+  }
+
+  .tabs-plasticsurgery__title:last-child span {
+    max-width: 9.375rem;
+  }
+
+  .tabs-plasticsurgery__title {
+    min-height: 104px;
+    height: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .tabs-plasticsurgery__title img {
+    display: block;
+  }
 }
 
 @media (min-width: 61.99875em) and (min-width: 90em) {
@@ -1913,35 +2356,61 @@ details > summary::-webkit-details-marker {
     -o-object-position: left;
        object-position: left;
   }
+
+  .tabs-changes__title img {
+    -o-object-position: left;
+       object-position: left;
+  }
+
+  .tabs-plasticsurgery__title img {
+    -o-object-position: left;
+       object-position: left;
+  }
 }
 
 @media (min-width: 84.375em) {
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     padding-top: 5rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     padding-bottom: 12.5rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     margin-top: 11.875rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     border-radius: 5rem;
   }
 
   .title {
     font-size: 6rem;
+  }
+
+  .consultation-form {
+    margin-top: 12.5rem;
   }
 
   .consultation-form__inputs {
@@ -1960,10 +2429,6 @@ details > summary::-webkit-details-marker {
     row-gap: 3rem;
   }
 
-  .spollers {
-    margin-bottom: 12.5rem;
-  }
-
   .spollers__title {
     font-size: 3.5rem;
   }
@@ -1980,6 +2445,18 @@ details > summary::-webkit-details-marker {
     -webkit-column-gap: 7.5rem;
        -moz-column-gap: 7.5rem;
             column-gap: 7.5rem;
+  }
+
+  .changes-links {
+    row-gap: 2.5rem;
+  }
+
+  .changes-links__item:not(:last-child) {
+    padding-bottom: 2.5rem;
+  }
+
+  .changes-links__title {
+    font-size: 2.5rem;
   }
 
   .footer {
@@ -2059,6 +2536,76 @@ details > summary::-webkit-details-marker {
 
   .item-search__title {
     font-size: 2.5rem;
+  }
+
+  .error-page__label {
+    font-size: 1.5rem;
+  }
+
+  .error-page__label:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .error-block__container {
+    -webkit-column-gap: 5.25rem;
+       -moz-column-gap: 5.25rem;
+            column-gap: 5.25rem;
+  }
+
+  .error-block__label {
+    font-size: 1.5rem;
+  }
+
+  .error-block__label:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .changes__title:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .tabs-changes {
+    row-gap: 9.25rem;
+  }
+
+  .tabs-changes__navigation {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .tabs-changes__title span {
+    font-size: 1.5rem;
+  }
+
+  .changes-links {
+    row-gap: 2.5rem;
+  }
+
+  .changes-links__item:not(:last-child) {
+    padding-bottom: 2.5rem;
+  }
+
+  .changes-links__title {
+    font-size: 2.5rem;
+  }
+
+  .plasticsurgery-page__title:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .tabs-plasticsurgery {
+    row-gap: 9.25rem;
+  }
+
+  .tabs-plasticsurgery__navigation {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .tabs-plasticsurgery__title span {
+    font-size: 1.5rem;
   }
 }
 
@@ -2357,6 +2904,18 @@ details > summary::-webkit-details-marker {
             flex: 0 0 3.5rem;
     height: 3.5rem;
   }
+
+  .tabs-changes__title span {
+    padding: 0.875rem 2rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .tabs-plasticsurgery__title span {
+    padding: 0.875rem 1.25rem;
+    text-align: center;
+    font-weight: 500;
+  }
 }
 
 @media (max-width: 61.99875em) and (any-hover: none) {
@@ -2380,6 +2939,14 @@ details > summary::-webkit-details-marker {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 2.5rem;
             flex: 0 0 2.5rem;
+  }
+
+  .changes-links__title::before {
+    width: 3.5rem;
+    height: 3.5rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 3.5rem;
+            flex: 0 0 3.5rem;
   }
 
   .footer__rights {
@@ -2437,6 +3004,19 @@ details > summary::-webkit-details-marker {
   .search-page__button::before {
     display: block;
   }
+
+  .changes-links__title::before {
+    width: 3.5rem;
+    height: 3.5rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 3.5rem;
+            flex: 0 0 3.5rem;
+  }
+
+  .tabs-plasticsurgery__navigation {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -2465,30 +3045,46 @@ details > summary::-webkit-details-marker {
 @media (max-width: 23.4375em) {
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     padding-top: 3rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     padding-bottom: 6.5rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     margin-top: 7.5rem;
   }
 
   .page__price-block,
   .page__faq,
-  .page__search {
+  .page__search,
+  .page__error,
+  .page__changes,
+  .page__plasticsurgery-page {
     border-radius: 2rem;
   }
 
   .title {
     font-size: 2rem;
+  }
+
+  .consultation-form {
+    margin-top: 6.5rem;
   }
 
   .consultation-form__inputs {
@@ -2507,10 +3103,6 @@ details > summary::-webkit-details-marker {
     row-gap: 2rem;
   }
 
-  .spollers {
-    margin-bottom: 6.5rem;
-  }
-
   .spollers__title {
     font-size: 1.5rem;
   }
@@ -2527,6 +3119,18 @@ details > summary::-webkit-details-marker {
     -webkit-column-gap: 1.25rem;
        -moz-column-gap: 1.25rem;
             column-gap: 1.25rem;
+  }
+
+  .changes-links {
+    row-gap: 2rem;
+  }
+
+  .changes-links__item:not(:last-child) {
+    padding-bottom: 2rem;
+  }
+
+  .changes-links__title {
+    font-size: 1.5rem;
   }
 
   .header__container {
@@ -2613,6 +3217,76 @@ details > summary::-webkit-details-marker {
   .item-search__title {
     font-size: 1.5rem;
   }
+
+  .error-page__label {
+    font-size: 1.25rem;
+  }
+
+  .error-page__label:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .error-block__container {
+    -webkit-column-gap: 1.5625rem;
+       -moz-column-gap: 1.5625rem;
+            column-gap: 1.5625rem;
+  }
+
+  .error-block__label {
+    font-size: 1.25rem;
+  }
+
+  .error-block__label:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .changes__title:not(:last-child) {
+    margin-bottom: 2.75rem;
+  }
+
+  .tabs-changes {
+    row-gap: 2.75rem;
+  }
+
+  .tabs-changes__navigation {
+    -webkit-column-gap: 0.5rem;
+       -moz-column-gap: 0.5rem;
+            column-gap: 0.5rem;
+  }
+
+  .tabs-changes__title span {
+    font-size: 1rem;
+  }
+
+  .changes-links {
+    row-gap: 2rem;
+  }
+
+  .changes-links__item:not(:last-child) {
+    padding-bottom: 2rem;
+  }
+
+  .changes-links__title {
+    font-size: 1.5rem;
+  }
+
+  .plasticsurgery-page__title:not(:last-child) {
+    margin-bottom: 2.75rem;
+  }
+
+  .tabs-plasticsurgery {
+    row-gap: 2.75rem;
+  }
+
+  .tabs-plasticsurgery__navigation {
+    -webkit-column-gap: 0.5rem;
+       -moz-column-gap: 0.5rem;
+            column-gap: 0.5rem;
+  }
+
+  .tabs-plasticsurgery__title span {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 62em) and (max-width: 90em) {
@@ -2693,7 +3367,10 @@ details > summary::-webkit-details-marker {
 @supports (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
     }
 }
@@ -2701,7 +3378,10 @@ details > summary::-webkit-details-marker {
 @supports not (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -2709,7 +3389,10 @@ details > summary::-webkit-details-marker {
 @supports (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
     }
 }
@@ -2717,7 +3400,10 @@ details > summary::-webkit-details-marker {
 @supports not (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -2725,7 +3411,10 @@ details > summary::-webkit-details-marker {
 @supports (margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem );
     }
 }
@@ -2733,7 +3422,10 @@ details > summary::-webkit-details-marker {
 @supports not (margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       margin-top: calc(7.5rem + 4.375 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -2741,7 +3433,10 @@ details > summary::-webkit-details-marker {
 @supports (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
     }
 }
@@ -2749,7 +3444,10 @@ details > summary::-webkit-details-marker {
 @supports not (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
     .page__price-block,
     .page__faq,
-    .page__search {
+    .page__search,
+    .page__error,
+    .page__changes,
+    .page__plasticsurgery-page {
       border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -2763,6 +3461,18 @@ details > summary::-webkit-details-marker {
 @supports not (font-size: clamp( 2rem , 0.4615384615rem  +  6.5641025641vw , 6rem )) {
     .title {
       font-size: calc(2rem + 4 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .consultation-form {
+      margin-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .consultation-form {
+      margin-top: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
@@ -2811,18 +3521,6 @@ details > summary::-webkit-details-marker {
 @supports not (row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
     .spollers {
       row-gap: calc(2rem + 1 * (100vw - 23.4375rem) / 60.9375);
-    }
-}
-
-@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
-    .spollers {
-      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
-    }
-}
-
-@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
-    .spollers {
-      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
@@ -2875,6 +3573,42 @@ details > summary::-webkit-details-marker {
       -webkit-column-gap: calc(1.25rem + 6.25 * (100vw - 23.4375rem) / 60.9375);
          -moz-column-gap: calc(1.25rem + 6.25 * (100vw - 23.4375rem) / 60.9375);
               column-gap: calc(1.25rem + 6.25 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links {
+      row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links {
+      row-gap: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links__item:not(:last-child) {
+      padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links__item:not(:last-child) {
+      padding-bottom: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .changes-links__title {
+      font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .changes-links__title {
+      font-size: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
@@ -3111,6 +3845,210 @@ details > summary::-webkit-details-marker {
       font-size: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
     }
 }
+
+@supports (font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem )) {
+    .error-page__label {
+      font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem )) {
+    .error-page__label {
+      font-size: calc(1.25rem + 0.25 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem )) {
+    .error-page__label:not(:last-child) {
+      margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem )) {
+    .error-page__label:not(:last-child) {
+      margin-bottom: calc(1.875rem + 3.125 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem )) or (column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem ))) {
+    .error-block__container {
+      -webkit-column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem );
+         -moz-column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem );
+              column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem )) or (column-gap: clamp( 1.5625rem , 0.1442307692rem  +  6.0512820513vw , 5.25rem ))) {
+    .error-block__container {
+      -webkit-column-gap: calc(1.5625rem + 3.6875 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(1.5625rem + 3.6875 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(1.5625rem + 3.6875 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem )) {
+    .error-block__label {
+      font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.1538461538rem  +  0.4102564103vw , 1.5rem )) {
+    .error-block__label {
+      font-size: calc(1.25rem + 0.25 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem )) {
+    .error-block__label:not(:last-child) {
+      margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 0.6730769231rem  +  5.1282051282vw , 5rem )) {
+    .error-block__label:not(:last-child) {
+      margin-bottom: calc(1.875rem + 3.125 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem )) {
+    .changes__title:not(:last-child) {
+      margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem )) {
+    .changes__title:not(:last-child) {
+      margin-bottom: calc(2.75rem + 3.75 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem )) {
+    .tabs-changes {
+      row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem )) {
+    .tabs-changes {
+      row-gap: calc(2.75rem + 6.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem )) or (column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem ))) {
+    .tabs-changes__navigation {
+      -webkit-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+         -moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+              column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem )) or (column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem ))) {
+    .tabs-changes__navigation {
+      -webkit-column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-changes__title span {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-changes__title span {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links {
+      row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links {
+      row-gap: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links__item:not(:last-child) {
+      padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .changes-links__item:not(:last-child) {
+      padding-bottom: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .changes-links__title {
+      font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .changes-links__title {
+      font-size: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem )) {
+    .plasticsurgery-page__title:not(:last-child) {
+      margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.75rem , 1.3076923077rem  +  6.1538461538vw , 6.5rem )) {
+    .plasticsurgery-page__title:not(:last-child) {
+      margin-bottom: calc(2.75rem + 3.75 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem )) {
+    .tabs-plasticsurgery {
+      row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2.75rem , 0.25rem  +  10.6666666667vw , 9.25rem )) {
+    .tabs-plasticsurgery {
+      row-gap: calc(2.75rem + 6.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem )) or (column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem ))) {
+    .tabs-plasticsurgery__navigation {
+      -webkit-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+         -moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+              column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem )) or (column-gap: clamp( 0.5rem , -0.2692307692rem  +  3.2820512821vw , 2.5rem ))) {
+    .tabs-plasticsurgery__navigation {
+      -webkit-column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(0.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-plasticsurgery__title span {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-plasticsurgery__title span {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
 }
 
 @media (min-width: 62.5em) and (max-width: 90em) {
@@ -3269,6 +4207,31 @@ details > summary::-webkit-details-marker {
     color: #fff;
   }
 
+  .changes-links__item:nth-child(odd) .changes-links__title:hover + .changes-links__image {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate(15.037deg) scale(1);
+        -ms-transform: rotate(15.037deg) scale(1);
+            transform: rotate(15.037deg) scale(1);
+  }
+
+  .changes-links__item:nth-child(even) .changes-links__title:hover + .changes-links__image {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate(-15.037deg) scale(1);
+        -ms-transform: rotate(-15.037deg) scale(1);
+            transform: rotate(-15.037deg) scale(1);
+  }
+
+  .changes-links__title:hover::before {
+    background-color: #1e78ff;
+    color: #fff;
+    border: 0.0625rem solid #1e78ff;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
   .footer__tg:hover,
   .footer__vk:hover {
     color: #78dccd;
@@ -3297,6 +4260,57 @@ details > summary::-webkit-details-marker {
 
   .item-search__link:hover {
     text-decoration: underline;
+  }
+
+  .tabs-changes__title:hover {
+    background-color: #78dccd;
+  }
+
+  .tabs-changes__title:hover span {
+    color: #fff;
+  }
+
+  .tabs-changes__title:hover img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+  }
+
+  .changes-links__item:nth-child(odd) .changes-links__title:hover + .changes-links__image {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate(15.037deg) scale(1);
+        -ms-transform: rotate(15.037deg) scale(1);
+            transform: rotate(15.037deg) scale(1);
+  }
+
+  .changes-links__item:nth-child(even) .changes-links__title:hover + .changes-links__image {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate(-15.037deg) scale(1);
+        -ms-transform: rotate(-15.037deg) scale(1);
+            transform: rotate(-15.037deg) scale(1);
+  }
+
+  .changes-links__title:hover::before {
+    background-color: #1e78ff;
+    color: #fff;
+    border: 0.0625rem solid #1e78ff;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  .tabs-plasticsurgery__title:hover {
+    background-color: #78dccd;
+  }
+
+  .tabs-plasticsurgery__title:hover span {
+    color: #fff;
+  }
+
+  .tabs-plasticsurgery__title:hover img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
   }
 }
 
