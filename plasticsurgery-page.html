@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240129035346">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240130000807">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -750,7 +750,7 @@
 											<div class="consultation-block__description">
 												Основатель клиники «ДокторПластик», пластический хирург, профессор, основатель собственной школы маммопластики.
 											</div>
-											<a href="#" class="consultation-block__btn btn btn_light">Записаться на консультацию</a>
+											<button type="button" data-popup="#consultation" class="consultation-block__btn btn btn_light">Записаться на консультацию</button>
 										</div>
 										<div class="consultation-block__less">
 											<div class="consultation-block__author">
@@ -778,7 +778,7 @@
 											<div class="consultation-block__description">
 												Основатель клиники «ДокторПластик», пластический хирург, профессор, основатель собственной школы маммопластики.
 											</div>
-											<a href="#" class="consultation-block__btn btn btn_light">Записаться на консультацию</a>
+											<button type="button" data-popup="#consultation" class="consultation-block__btn btn btn_light">Записаться на консультацию</button>
 										</div>
 										<div class="consultation-block__less">
 											<div class="consultation-block__author">
@@ -806,7 +806,7 @@
 											<div class="consultation-block__description">
 												Основатель клиники «ДокторПластик», пластический хирург, профессор, основатель собственной школы маммопластики.
 											</div>
-											<a href="#" class="consultation-block__btn btn btn_light">Записаться на консультацию</a>
+											<button type="button" data-popup="#consultation" class="consultation-block__btn btn btn_light">Записаться на консультацию</button>
 										</div>
 										<div class="consultation-block__less">
 											<div class="consultation-block__author">
@@ -834,7 +834,7 @@
 											<div class="consultation-block__description">
 												Основатель клиники «ДокторПластик», пластический хирург, профессор, основатель собственной школы маммопластики.
 											</div>
-											<a href="#" class="consultation-block__btn btn btn_light">Записаться на консультацию</a>
+											<button type="button" data-popup="#consultation" class="consultation-block__btn btn btn_light">Записаться на консультацию</button>
 										</div>
 										<div class="consultation-block__less">
 											<div class="consultation-block__author">
@@ -851,7 +851,7 @@
 					<div class="plasticsurgery-page__consultation-form consultation-form">
 						<div class="consultation-form__container">
 							<form action="#" class="consultation-form__form">
-								<h2 class="consultation-form__title title">Записаться</h2>
+								<h2 class="consultation-form__title">Записаться</h2>
 								<div class="consultation-form__inputs">
 									<input autocomplete="off" type="text" name="form[]" placeholder="Имя" class="consultation-form__input input">
 									<input autocomplete="off" type="text" name="form[]" placeholder="Телефон" class="consultation-form__input input">
@@ -921,7 +921,45 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240129035346"></script>
+	<div id="youtube" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">&#10006;</button>
+				<div class="popup__text">
+					<div data-popup-youtube-place class="popup__video">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div id="consultation" aria-hidden="true" class="consultation__popup popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">&#10006;</button>
+				<div class="popup__text">
+					<form action="#" class="form-consultation">
+						<h2 class="form-consultation__title">Записаться</h2>
+						<div class="form-consultation__inputs">
+							<input autocomplete="off" type="text" name="form[]" placeholder="Имя" class="form-consultation__input input">
+							<input autocomplete="off" type="text" name="form[]" placeholder="Телефон" class="form-consultation__input input">
+						</div>
+						<div class="form-consultation__checkbox checkbox">
+							<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+							<label for="c_1" class="checkbox__label"><span class="checkbox__text">Нажимая на кнопку, вы даете согласие на обработку данныхи соглашаетесь с <a href="https://www.google.com/" target="_blank"> Политикой конфиденциальности.</a></span></label>
+						</div>
+						<button type="submit" class="form-consultation__button btn btn_light">Заказать обратный звонок</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240130000807"></script>
 </body>
 
 </html>
