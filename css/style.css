@@ -10,11 +10,14 @@
   font-style: normal;
 }
 
+.breadcrumbs__back::before,
+.breadcrumbs__item:not(:last-child)::before,
 .item-news__link::before,
 .consultation-block__arrow-left::before,
 .consultation-block__arrow-right::before,
 .question-block__title::after,
 .parts-block__title::before,
+.video__btn::before,
 .changes-links__title::before,
 .pagging__arrow::before,
 .spollers__title::before,
@@ -31,6 +34,10 @@
 
 [class*=_icon-]:before {
   display: block;
+}
+
+._icon-breadcrumbs-arrow:before {
+  content: "\e90a";
 }
 
 ._icon-arrow:before {
@@ -742,13 +749,44 @@ textarea.input {
      object-fit: contain;
 }
 
+.video {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video video,
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .page__price-block,
 .page__faq,
 .page__search,
 .page__error,
 .page__changes,
 .page__plasticsurgery-page,
-.page__news {
+.page__news,
+.page__video-reviews {
+  max-width: 89.5rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.page__article {
+  max-width: 89.5rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.page__chest {
   max-width: 89.5rem;
   margin: 0 auto;
   background-color: #fff;
@@ -1127,6 +1165,84 @@ textarea.input {
   -webkit-transform: rotate(-55deg);
       -ms-transform: rotate(-55deg);
           transform: rotate(-55deg);
+}
+
+.video {
+  border-radius: 1.25rem;
+}
+
+.video__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.video__btn {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  background: #78dccd;
+}
+
+.video__btn::before {
+  content: "\e905";
+  color: #fff;
+  font-size: 1rem;
+}
+
+.video__btn.hide {
+  display: none;
+}
+
+.video video {
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.video video.active {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.category {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: #f3f3f3;
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.category:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .header {
@@ -2434,6 +2550,268 @@ details > summary::-webkit-details-marker {
   color: #fff;
 }
 
+.breadcrumbs__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.breadcrumbs__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.breadcrumbs__item:last-child {
+  color: #fff;
+}
+
+.breadcrumbs__item:not(:last-child)::before {
+  content: "\e901";
+  font-size: 0.625rem;
+  color: #fff;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.breadcrumbs__back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.breadcrumbs__back::before {
+  content: "\e90a";
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  font-size: 0.875rem;
+}
+
+.article-page__title {
+  max-width: 70.625rem;
+}
+
+.article-page__image {
+  position: relative;
+  aspect-ratio: 1320/347;
+}
+
+.article-page__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.info-article {
+  margin: 0 auto;
+  max-width: 44.5rem;
+}
+
+.info-article__date {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.info-article__title {
+  color: #131923;
+  font-weight: 600;
+  line-height: 1.3;
+  /* 125% */
+}
+
+.info-article__text p {
+  color: #131923;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  /* 137.5% */
+}
+
+.info-article__text p:not(:last-child) {
+  margin-bottom: 1.75rem;
+}
+
+.info-article__img {
+  max-width: 100%;
+}
+
+.info-article__label {
+  color: #131923;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.chest-page__items {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 2.5rem;
+}
+
+.chest-page__tabs {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2.5625rem;
+     -moz-column-gap: 2.5625rem;
+          column-gap: 2.5625rem;
+  row-gap: 1.5rem;
+}
+
+.tabs-chest__navigation {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1rem;
+  -webkit-column-gap: 0.5rem;
+     -moz-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
+.tabs-chest__title {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  border-radius: 1.25rem;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1rem;
+  -webkit-column-gap: 0.5rem;
+     -moz-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+}
+
+.tabs-chest__title._tab-active {
+  background: #78dccd;
+}
+
+.tabs-chest__title._tab-active .tabs-chest__icon svg path {
+  fill: #fff;
+}
+
+.tabs-chest__title._tab-active span {
+  color: #fff;
+}
+
+.tabs-chest__title span {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: #131923;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.tabs-chest__icon svg path {
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+
+.tabs-chest__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.tabs-chest__change {
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+}
+
+.tabs-chest__image {
+  max-width: 100%;
+}
+
+.tabs-chest__before {
+  color: #131923;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.tabs-chest__after {
+  color: #131923;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  /* 100% */
+}
+
+.video-reviews__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video-reviews__item {
+  display: -ms-grid;
+  display: grid;
+}
+
+.video-reviews__label {
+  color: #131923;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -2695,6 +3073,10 @@ details > summary::-webkit-details-marker {
     left: 0;
   }
 
+  .spollers-plasticsurgery {
+    display: none;
+  }
+
   .news__navigation {
     display: -ms-grid;
     display: grid;
@@ -2713,6 +3095,111 @@ details > summary::-webkit-details-marker {
 
   .item-news__content {
     max-width: 38.25rem;
+  }
+
+  .breadcrumbs__back {
+    display: none;
+  }
+
+  .chest-page__item {
+    padding: 3.5rem;
+    background: #f3f3f3;
+    border-radius: 20px;
+  }
+
+  .chest-page__tabs {
+    -ms-grid-columns: auto 1fr;
+    grid-template-columns: auto 1fr;
+  }
+
+  .tabs-chest__title {
+    padding: 1.5625rem 1.125rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .tabs-chest__before {
+    padding: 1.75rem 1.5rem;
+    border-radius: 20px;
+    background: #b8babd;
+    color: #f3f3f3;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    /* 100% */
+    position: relative;
+    min-height: 72px;
+  }
+
+  .tabs-chest__before::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px);
+        -ms-transform: translate(-50%, 0px);
+            transform: translate(-50%, 0px);
+    width: 2.125rem;
+    height: 0.375rem;
+    background: url("../img/triangle-grey.svg") 0 0/100% no-repeat;
+    z-index: 2;
+  }
+
+  .tabs-chest__before::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px) rotate(180deg);
+        -ms-transform: translate(-50%, 0px) rotate(180deg);
+            transform: translate(-50%, 0px) rotate(180deg);
+    width: 2.125rem;
+    height: 0.375rem;
+    background: url("../img/triangle-grey.svg") 0 0/100% no-repeat;
+    z-index: 2;
+  }
+
+  .tabs-chest__after {
+    padding: 1.75rem 1.5rem;
+    border-radius: 20px;
+    background: #1e78ff;
+    color: #f3f3f3;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    /* 100% */
+    position: relative;
+    min-height: 72px;
+  }
+
+  .tabs-chest__after::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px);
+        -ms-transform: translate(-50%, 0px);
+            transform: translate(-50%, 0px);
+    width: 2.125rem;
+    height: 0.375rem;
+    background: url("../img/triangle-grey.svg") 0 0/100% no-repeat;
+    z-index: 2;
+  }
+
+  .tabs-chest__after::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px) rotate(180deg);
+        -ms-transform: translate(-50%, 0px) rotate(180deg);
+            transform: translate(-50%, 0px) rotate(180deg);
+    width: 2.125rem;
+    height: 0.375rem;
+    background: url("../img/triangle-grey.svg") 0 0/100% no-repeat;
+    z-index: 2;
   }
 }
 
@@ -2768,7 +3255,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     padding-top: 5rem;
   }
 
@@ -2778,7 +3266,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     padding-bottom: 12.5rem;
   }
 
@@ -2788,7 +3277,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     margin-top: 11.875rem;
   }
 
@@ -2798,7 +3288,40 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
+    border-radius: 5rem;
+  }
+
+  .page__article {
+    padding-top: 5rem;
+  }
+
+  .page__article {
+    padding-bottom: 12.5rem;
+  }
+
+  .page__article {
+    margin-top: 2.6875rem;
+  }
+
+  .page__article {
+    border-radius: 5rem;
+  }
+
+  .page__chest {
+    padding-top: 5rem;
+  }
+
+  .page__chest {
+    padding-bottom: 12.5rem;
+  }
+
+  .page__chest {
+    margin-top: 2.875rem;
+  }
+
+  .page__chest {
     border-radius: 5rem;
   }
 
@@ -2852,7 +3375,7 @@ details > summary::-webkit-details-marker {
     padding-bottom: 2.5rem;
   }
 
-  .spollers-plasticsurgery__changes-links .changes-links__title {
+  .spollers-plasticsurgery .changes-links__title {
     font-size: 2.5rem;
   }
 
@@ -3035,6 +3558,10 @@ details > summary::-webkit-details-marker {
     font-size: 2.5rem;
   }
 
+  .spollers-plasticsurgery:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
   .news__title:not(:last-child) {
     margin-bottom: 5rem;
   }
@@ -3051,6 +3578,80 @@ details > summary::-webkit-details-marker {
 
   .item-news__date:not(:last-child) {
     margin-bottom: 2.5rem;
+  }
+
+  .breadcrumbs {
+    margin-top: 12.5rem;
+  }
+
+  .article-page__title {
+    font-size: 4rem;
+  }
+
+  .article-page__title:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .article-page__image:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .info-article__date:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .info-article__title {
+    font-size: 1.5rem;
+  }
+
+  .info-article__title:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-article__text:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .info-article__img:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .info-article__label {
+    margin-top: 1.5rem;
+  }
+
+  .info-article__label {
+    font-size: 1.5rem;
+  }
+
+  .chest-page__title:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .tabs-chest__change {
+    row-gap: 1.5rem;
+  }
+
+  .video-reviews__title:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .video-reviews__items {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .video-reviews__items {
+    row-gap: 5rem;
+  }
+
+  .video-reviews__item {
+    row-gap: 2rem;
+  }
+
+  .video-reviews__label {
+    font-size: 1.5rem;
   }
 }
 
@@ -3285,9 +3886,18 @@ details > summary::-webkit-details-marker {
             flex: 0 0 3.5rem;
   }
 
-  .spollers-plasticsurgery__changes-links .changes-links__item {
+  .spollers-plasticsurgery .changes-links__item {
     border-bottom: none;
     padding-bottom: 0rem;
+  }
+
+  .video__btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .category {
+    display: none;
   }
 
   .header::before {
@@ -3365,6 +3975,10 @@ details > summary::-webkit-details-marker {
     font-weight: 500;
   }
 
+  .tabs-plasticsurgery {
+    display: none;
+  }
+
   .tabs-plasticsurgery__navigation {
     display: none;
   }
@@ -3422,6 +4036,40 @@ details > summary::-webkit-details-marker {
 
   .item-news__link {
     display: none;
+  }
+
+  .breadcrumbs__item {
+    display: none;
+  }
+
+  .article-page__image {
+    aspect-ratio: 343/192;
+  }
+
+  .chest-page__items {
+    row-gap: 3.5rem;
+  }
+
+  .tabs-chest__navigation {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabs-chest__title {
+    background: #f3f3f3;
+  }
+
+  .tabs-chest__title span {
+    color: #888b90;
+  }
+
+  .tabs-chest__icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .tabs-chest__icon svg path {
+    fill: #888b90;
   }
 }
 
@@ -3511,6 +4159,11 @@ details > summary::-webkit-details-marker {
   .search-page__button::before {
     display: block;
   }
+
+  .video-reviews__items {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -3519,6 +4172,13 @@ details > summary::-webkit-details-marker {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+}
+
+@media (max-width: 36.25em) {
+  .tabs-chest__item {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -3543,7 +4203,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     padding-top: 3rem;
   }
 
@@ -3553,7 +4214,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     padding-bottom: 6.5rem;
   }
 
@@ -3563,7 +4225,8 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
     margin-top: 7.5rem;
   }
 
@@ -3573,7 +4236,40 @@ details > summary::-webkit-details-marker {
   .page__error,
   .page__changes,
   .page__plasticsurgery-page,
-  .page__news {
+  .page__news,
+  .page__video-reviews {
+    border-radius: 2rem;
+  }
+
+  .page__article {
+    padding-top: 3rem;
+  }
+
+  .page__article {
+    padding-bottom: 6.5rem;
+  }
+
+  .page__article {
+    margin-top: 1.5rem;
+  }
+
+  .page__article {
+    border-radius: 2rem;
+  }
+
+  .page__chest {
+    padding-top: 3rem;
+  }
+
+  .page__chest {
+    padding-bottom: 6.5rem;
+  }
+
+  .page__chest {
+    margin-top: 1.5rem;
+  }
+
+  .page__chest {
     border-radius: 2rem;
   }
 
@@ -3627,7 +4323,7 @@ details > summary::-webkit-details-marker {
     padding-bottom: 2rem;
   }
 
-  .spollers-plasticsurgery__changes-links .changes-links__title {
+  .spollers-plasticsurgery .changes-links__title {
     font-size: 1rem;
   }
 
@@ -3820,6 +4516,10 @@ details > summary::-webkit-details-marker {
     font-size: 1.5rem;
   }
 
+  .spollers-plasticsurgery:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
   .news__title:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -3836,6 +4536,80 @@ details > summary::-webkit-details-marker {
 
   .item-news__date:not(:last-child) {
     margin-bottom: 1.5rem;
+  }
+
+  .breadcrumbs {
+    margin-top: 6.25rem;
+  }
+
+  .article-page__title {
+    font-size: 2rem;
+  }
+
+  .article-page__title:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .article-page__image:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .info-article__date:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-article__title {
+    font-size: 1rem;
+  }
+
+  .info-article__title:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .info-article__text:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-article__img:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-article__label {
+    margin-top: 1.125rem;
+  }
+
+  .info-article__label {
+    font-size: 1rem;
+  }
+
+  .chest-page__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .tabs-chest__change {
+    row-gap: 0.5rem;
+  }
+
+  .video-reviews__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .video-reviews__items {
+    -webkit-column-gap: 2.1875rem;
+       -moz-column-gap: 2.1875rem;
+            column-gap: 2.1875rem;
+  }
+
+  .video-reviews__items {
+    row-gap: 2.5rem;
+  }
+
+  .video-reviews__item {
+    row-gap: 1rem;
+  }
+
+  .video-reviews__label {
+    font-size: 1rem;
   }
 }
 
@@ -3921,7 +4695,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
     }
 }
@@ -3933,7 +4708,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -3945,7 +4721,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
     }
 }
@@ -3957,7 +4734,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -3969,7 +4747,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       margin-top: clamp( 7.5rem , 5.8173076923rem  +  7.1794871795vw , 11.875rem );
     }
 }
@@ -3981,7 +4760,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       margin-top: calc(7.5rem + 4.375 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -3993,7 +4773,8 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
       border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
     }
 }
@@ -4005,7 +4786,104 @@ details > summary::-webkit-details-marker {
     .page__error,
     .page__changes,
     .page__plasticsurgery-page,
-    .page__news {
+    .page__news,
+    .page__video-reviews {
+      border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__article {
+      padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__article {
+      padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__article {
+      padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__article {
+      padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 1.5rem , 1.0432692308rem  +  1.9487179487vw , 2.6875rem )) {
+    .page__article {
+      margin-top: clamp( 1.5rem , 1.0432692308rem  +  1.9487179487vw , 2.6875rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.5rem , 1.0432692308rem  +  1.9487179487vw , 2.6875rem )) {
+    .page__article {
+      margin-top: calc(1.5rem + 1.1875 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__article {
+      border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__article {
+      border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__chest {
+      padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__chest {
+      padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__chest {
+      padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__chest {
+      padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 1.5rem , 0.9711538462rem  +  2.2564102564vw , 2.875rem )) {
+    .page__chest {
+      margin-top: clamp( 1.5rem , 0.9711538462rem  +  2.2564102564vw , 2.875rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.5rem , 0.9711538462rem  +  2.2564102564vw , 2.875rem )) {
+    .page__chest {
+      margin-top: calc(1.5rem + 1.375 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__chest {
+      border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__chest {
       border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -4159,13 +5037,13 @@ details > summary::-webkit-details-marker {
 }
 
 @supports (font-size: clamp( 1rem , 0.4230769231rem  +  2.4615384615vw , 2.5rem )) {
-    .spollers-plasticsurgery__changes-links .changes-links__title {
+    .spollers-plasticsurgery .changes-links__title {
       font-size: clamp( 1rem , 0.4230769231rem  +  2.4615384615vw , 2.5rem );
     }
 }
 
 @supports not (font-size: clamp( 1rem , 0.4230769231rem  +  2.4615384615vw , 2.5rem )) {
-    .spollers-plasticsurgery__changes-links .changes-links__title {
+    .spollers-plasticsurgery .changes-links__title {
       font-size: calc(1rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
     }
 }
@@ -4696,6 +5574,18 @@ details > summary::-webkit-details-marker {
     }
 }
 
+@supports (margin-bottom: clamp( 5rem , 4.4230769231rem  +  2.4615384615vw , 6.5rem )) {
+    .spollers-plasticsurgery:not(:last-child) {
+      margin-bottom: clamp( 5rem , 4.4230769231rem  +  2.4615384615vw , 6.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 5rem , 4.4230769231rem  +  2.4615384615vw , 6.5rem )) {
+    .spollers-plasticsurgery:not(:last-child) {
+      margin-bottom: calc(5rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
 @supports (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
     .news__title:not(:last-child) {
       margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
@@ -4745,6 +5635,226 @@ details > summary::-webkit-details-marker {
 @supports not (margin-bottom: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
     .item-news__date:not(:last-child) {
       margin-bottom: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 6.25rem , 3.8461538462rem  +  10.2564102564vw , 12.5rem )) {
+    .breadcrumbs {
+      margin-top: clamp( 6.25rem , 3.8461538462rem  +  10.2564102564vw , 12.5rem );
+    }
+}
+
+@supports not (margin-top: clamp( 6.25rem , 3.8461538462rem  +  10.2564102564vw , 12.5rem )) {
+    .breadcrumbs {
+      margin-top: calc(6.25rem + 6.25 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.2307692308rem  +  3.2820512821vw , 4rem )) {
+    .article-page__title {
+      font-size: clamp( 2rem , 1.2307692308rem  +  3.2820512821vw , 4rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.2307692308rem  +  3.2820512821vw , 4rem )) {
+    .article-page__title {
+      font-size: calc(2rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .article-page__title:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .article-page__title:not(:last-child) {
+      margin-bottom: calc(2.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .article-page__image:not(:last-child) {
+      margin-bottom: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .article-page__image:not(:last-child) {
+      margin-bottom: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__date:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__date:not(:last-child) {
+      margin-bottom: calc(2.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .info-article__title {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .info-article__title {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .info-article__title:not(:last-child) {
+      margin-bottom: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .info-article__title:not(:last-child) {
+      margin-bottom: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__text:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__text:not(:last-child) {
+      margin-bottom: calc(2.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__img:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .info-article__img:not(:last-child) {
+      margin-bottom: calc(2.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 1.125rem , 0.9807692308rem  +  0.6153846154vw , 1.5rem )) {
+    .info-article__label {
+      margin-top: clamp( 1.125rem , 0.9807692308rem  +  0.6153846154vw , 1.5rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.125rem , 0.9807692308rem  +  0.6153846154vw , 1.5rem )) {
+    .info-article__label {
+      margin-top: calc(1.125rem + 0.375 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .info-article__label {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .info-article__label {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .chest-page__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .chest-page__title:not(:last-child) {
+      margin-bottom: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 0.5rem , 0.1153846154rem  +  1.641025641vw , 1.5rem )) {
+    .tabs-chest__change {
+      row-gap: clamp( 0.5rem , 0.1153846154rem  +  1.641025641vw , 1.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 0.5rem , 0.1153846154rem  +  1.641025641vw , 1.5rem )) {
+    .tabs-chest__change {
+      row-gap: calc(0.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .video-reviews__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .video-reviews__title:not(:last-child) {
+      margin-bottom: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem )) or (column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem ))) {
+    .video-reviews__items {
+      -webkit-column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem );
+         -moz-column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem );
+              column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem )) or (column-gap: clamp( 2.1875rem , 2.0673076923rem  +  0.5128205128vw , 2.5rem ))) {
+    .video-reviews__items {
+      -webkit-column-gap: calc(2.1875rem + 0.3125 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(2.1875rem + 0.3125 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(2.1875rem + 0.3125 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem )) {
+    .video-reviews__items {
+      row-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem )) {
+    .video-reviews__items {
+      row-gap: calc(2.5rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem )) {
+    .video-reviews__item {
+      row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem )) {
+    .video-reviews__item {
+      row-gap: calc(1rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .video-reviews__label {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .video-reviews__label {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 }
@@ -4974,6 +6084,15 @@ details > summary::-webkit-details-marker {
             transform: rotate(-15.037deg) scale(1);
   }
 
+  .video:hover video {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+  }
+
+  .video__btn:hover {
+    background: #5daea2;
+  }
+
   .footer__tg:hover,
   .footer__vk:hover {
     color: #78dccd;
@@ -5064,6 +6183,22 @@ details > summary::-webkit-details-marker {
 
   .item-news__link:hover {
     background-color: #64b7aa;
+  }
+
+  .breadcrumbs__item:not(:last-child):hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .tabs-chest__title:hover {
+    background: #78dccd;
+  }
+
+  .tabs-chest__title:hover .tabs-chest__icon svg path {
+    fill: #fff;
+  }
+
+  .tabs-chest__title:hover span {
+    color: #fff;
   }
 }
 

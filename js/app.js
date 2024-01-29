@@ -3651,6 +3651,24 @@
         const searchInput = document.querySelector(".search-page__input");
         if (searchInput) searchInput.value = searchQuery;
     }));
+    const videoBtns = document.querySelectorAll(".video__btn");
+    const videos = document.querySelectorAll(".video video");
+    if (videoBtns.length && videos.length) {
+        videoBtns.forEach(((btn, index) => {
+            btn.addEventListener("click", (function() {
+                if (videos[index]) {
+                    videos[index].play();
+                    this.classList.add("hide");
+                    videos[index].classList.add("active");
+                }
+            }));
+        }));
+        videos.forEach((video => {
+            video.addEventListener("play", (function() {
+                this.controls = true;
+            }));
+        }));
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
