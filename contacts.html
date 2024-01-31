@@ -258,11 +258,76 @@
 
 
 		<main class="page">
-			<div class="page__error error-page">
-				<div class="error-page__container">
-					<img src="img/404.png" alt="error" class="error-page__image">
-					<div class="error-page__label">Страница не найдена</div>
-					<button type="button" class="error-page__btn btn btn_light">На главную</button>
+			<div class="page__contacts contacts">
+				<div class="contacts__container">
+					<h1 class="contacts__title title">Контакты</h1>
+					<div class="contacts__content">
+						<div class="contacts__wrapper">
+							<div class="contacts__address address-contacts">
+								<h4 class="address-contacts__subtitle">Адрес:</h4>
+								<div class="address-contacts__content">
+									<div class="address-contacts__icon _icon-location"></div>
+									<div class="address-contacts__body">
+										<div class="address-contacts__street">г. Москва, ул. Мясницкая 32, м. Чистые Пруды</div>
+										<div class="address-contacts__label">Вход с улицы, вывеска "Доктор Пластик", 2 этаж</div>
+									</div>
+								</div>
+							</div>
+							<div class="contacts__info">
+								<div class="contacts__time time-contacts">
+									<h4 class="time-contacts__subtitle">График работы:</h4>
+									<div class="time-contacts__content">
+										<div class="time-contacts__icon _icon-time"></div>
+										<div class="time-contacts__body">
+											<div class="time-contacts__timetable">с 9.00 до 21.00</div>
+											<div class="time-contacts__label">Без выходных</div>
+										</div>
+									</div>
+								</div>
+								<div class="contacts__email email-contacts">
+									<h4 class="email-contacts__subtitle">E-mail:</h4>
+									<div class="email-contacts__content">
+										<div class="email-contacts__icon _icon-time"></div>
+										<div class="email-contacts__body">
+											<a href="mailto:info@doctorplastic.ru" class="email-contacts__address">info@doctorplastic.ru</a>
+										</div>
+									</div>
+								</div>
+								<div class="contacts__phone phone-contacts">
+									<h4 class="phone-contacts__subtitle">Телефон:</h4>
+									<div class="phone-contacts__content">
+										<div class="phone-contacts__icon _icon-time"></div>
+										<div class="phone-contacts__body">
+											<a href="tel:+74992261654" class="phone-contacts__number">+7 (499) 226 16 54</a>
+										</div>
+									</div>
+								</div>
+								<div class="contacts__socials socials-contacts">
+									<h4 class="socials-contacts__subtitle">Мы в соц. сетях:</h4>
+									<div class="socials-contacts__content">
+										<a href="#" class="socials-contacts__tg _icon-tg"></a>
+										<a href="#" class="socials-contacts__vk _icon-vk"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<img src="img/contacts/image.png" alt="image" class="contacts__image">
+					</div>
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0bf5cecfed93287b9a9778bff5eae1f7ab8874e862ba77e7516b4972b3aabcd5&amp;width=100%25&amp;height=478&amp;lang=ru_RU&amp;scroll=true&_v=20240131231745"></script>
+					<div class="contacts__consultation-form consultation-form">
+						<div class="consultation-form__container">
+							<form action="#" class="consultation-form__form">
+								<h2 class="consultation-form__title title">Записаться</h2>
+								<div class="consultation-form__inputs">
+									<input autocomplete="off" type="text" name="form[]" placeholder="Имя" class="consultation-form__input input">
+									<input autocomplete="off" type="text" name="form[]" placeholder="Телефон" class="consultation-form__input input">
+								</div>
+								<div class="consultation-form__confidentiality">Нажимая на кнопку, вы даете согласие на обработку данныхи соглашаетесь с <a href="#"> Политикой конфиденциальности.</a></div>
+								<button type="submit" class="consultation-form__button btn btn_light">Заказать обратный звонок</button>
+							</form>
+							<img src="img/girl.jpg" class="consultation-form__image" alt="girl">
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -321,6 +386,44 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div id="youtube" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">&#10006;</button>
+				<div class="popup__text">
+					<div data-popup-youtube-place class="popup__video">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div id="consultation" aria-hidden="true" class="consultation__popup popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">&#10006;</button>
+				<div class="popup__text">
+					<form action="#" class="form-consultation">
+						<h2 class="form-consultation__title">Записаться</h2>
+						<div class="form-consultation__inputs">
+							<input autocomplete="off" type="text" name="form[]" placeholder="Имя" class="form-consultation__input input">
+							<input autocomplete="off" type="text" name="form[]" placeholder="Телефон" class="form-consultation__input input">
+						</div>
+						<div class="form-consultation__checkbox checkbox">
+							<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+							<label for="c_1" class="checkbox__label"><span class="checkbox__text">Нажимая на кнопку, вы даете согласие на обработку данныхи соглашаетесь с <a href="https://www.google.com/" target="_blank"> Политикой конфиденциальности.</a></span></label>
+						</div>
+						<button type="submit" class="form-consultation__button btn btn_light">Заказать обратный звонок</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="js/app.min.js?_v=20240131231745"></script>
 </body>
