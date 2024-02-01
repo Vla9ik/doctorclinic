@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240131231745">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240201023119">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -315,9 +315,9 @@
 							<img class="doctor-info__image" src="img/specialist-page/doctor.png" alt="image">
 						</div>
 						<div class="doctor-info__description">Основатель клиники «ДокторПластик», пластический хирург, профессор, основатель собственной школы маммопластики.</div>
-						<button type="submit" class="doctor-info__button btn btn_light">Записаться на консультацию</button>
+						<button data-popup="#consultation" type="submit" class="doctor-info__button btn btn_light">Записаться на консультацию</button>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__info info-specialist">
+					<div data-watch-threshold="0.5" data-watch="navigator" class="specialist-page__info info-specialist">
 						<div class="info-specialist__content">
 							<h2 class="info-specialist__title">О докторе</h2>
 							<ul class="info-specialist__list">
@@ -339,7 +339,7 @@
 							</div>
 						</form>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__certificates certificates">
+					<div data-watch-threshold="1" data-watch="navigator" class="specialist-page__certificates certificates">
 						<h2 class="certificates__title">Дипломы и сертификаты</h2>
 						<!-- Оболонка слайдера -->
 						<div class="certificates__slider swiper">
@@ -391,7 +391,7 @@
 							<button type="button" class="certificates__swiper-button-next"></button>
 						</div>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__experience experience">
+					<div data-watch-threshold="0.95" data-watch="navigator" class="specialist-page__experience experience">
 						<div class="experience__education">
 							<h3 class="experience__title">Образование</h3>
 							<ul class="experience__list">
@@ -409,7 +409,7 @@
 							</ul>
 						</div>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__portfolio portfolio">
+					<div data-watch-threshold="0.5" data-watch="navigator" class="specialist-page__portfolio portfolio">
 						<h2 class="portfolio__title">Работы доктора</h2>
 						<div class="portfolio__slider swiper">
 							<div class="portfolio__wrapper swiper-wrapper">
@@ -486,7 +486,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__feedback feedback-specialist">
+					<div data-watch-threshold="0.5" data-watch="navigator" class="specialist-page__feedback feedback-specialist">
 						<div class="feedback-specialist__container">
 							<div class="feedback-specialist__content">
 								<h2 class="feedback-specialist__title">Отзывы</h2>
@@ -500,9 +500,9 @@
 								<div class="feedback-specialist__wrapper swiper-wrapper">
 									<div class="feedback-specialist__slide swiper-slide">
 										<article class="feedback-specialist__card">
-											<a href="#" class="feedback-specialist__image">
+											<div class="feedback-specialist__image">
 												<img src="img/specialist-page/review.jpg" alt="image">
-											</a>
+											</div>
 											<div class="feedback-specialist__more">
 												<div class="feedback-specialist__author">
 													<h3 class="feedback-specialist__surname">Бухинбальта</h3>
@@ -531,9 +531,9 @@
 									</div>
 									<div class="feedback-specialist__slide swiper-slide">
 										<article class="feedback-specialist__card">
-											<a href="#" class="feedback-specialist__image">
+											<div class="feedback-specialist__image">
 												<img src="img/specialist-page/review.jpg" alt="image">
-											</a>
+											</div>
 											<div class="feedback-specialist__more">
 												<div class="feedback-specialist__author">
 													<h3 class="feedback-specialist__surname">Бухинбальта</h3>
@@ -562,9 +562,9 @@
 									</div>
 									<div class="feedback-specialist__slide swiper-slide">
 										<article class="feedback-specialist__card">
-											<a href="#" class="feedback-specialist__image">
+											<div class="feedback-specialist__image">
 												<img src="img/specialist-page/review.jpg" alt="image">
-											</a>
+											</div>
 											<div class="feedback-specialist__more">
 												<div class="feedback-specialist__author">
 													<h3 class="feedback-specialist__surname">Бухинбальта</h3>
@@ -593,9 +593,9 @@
 									</div>
 									<div class="feedback-specialist__slide swiper-slide">
 										<article class="feedback-specialist__card">
-											<a href="#" class="feedback-specialist__image">
+											<div class="feedback-specialist__image">
 												<img src="img/specialist-page/review.jpg" alt="image">
-											</a>
+											</div>
 											<div class="feedback-specialist__more">
 												<div class="feedback-specialist__author">
 													<h3 class="feedback-specialist__surname">Бухинбальта</h3>
@@ -627,7 +627,7 @@
 							<button class="feedback-specialist__all-reviews btn btn_light">Читать все отзывы</button>
 						</div>
 					</div>
-					<div data-watch-threshold='0.5' class="specialist-page__video video-specialist">
+					<div data-watch-threshold="0.5" class="specialist-page__video video-specialist">
 						<div class="video-specialist__container">
 							<div class="video-specialist__video video">
 								<img src="img/specialist-page/video.jpg" alt="image">
@@ -636,7 +636,7 @@
 							<div class="video-specialist__label">Доктор Сергеев. Подробнее о пластическом хирурге и основателе клиники</div>
 						</div>
 					</div>
-					<div data-watch-threshold='0.5' data-watch="navigator" class="specialist-page__changes-links changes-links">
+					<div data-watch-threshold="0.1" data-watch="navigator" class="specialist-page__changes-links changes-links">
 						<a href="#" class="changes-links__item">
 							<h3 class="changes-links__title">Увеличение груди</h3>
 							<div class="changes-links__image">
@@ -809,7 +809,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240131231745"></script>
+	<script src="js/app.min.js?_v=20240201023119"></script>
 </body>
 
 </html>
