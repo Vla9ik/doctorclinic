@@ -10,6 +10,7 @@
   font-style: normal;
 }
 
+.prices-block__all-works span:last-child::before,
 .photo-gallery__arrow-right::before,
 .photo-gallery__arrow-left::before,
 .articles-block__link::before,
@@ -31,6 +32,7 @@
 .consultation-block__arrow-right::before,
 .question-block__title::after,
 .parts-block__title::before,
+.clinic-info__more span:last-child::before,
 .videoreview-btn span:first-child::before,
 .video__btn::before,
 .changes-links__title::before,
@@ -1297,6 +1299,12 @@ body::after {
   background-color: #fff;
 }
 
+.page__breast-augmentation {
+  max-width: 89.5rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
 .btn {
   width: 100%;
   position: relative;
@@ -1796,6 +1804,7 @@ body::after {
 }
 
 .videoreview-btn span:last-child {
+  text-align: center;
   min-width: 146px;
   position: relative;
   min-height: 72px;
@@ -2331,6 +2340,378 @@ details > summary::-webkit-details-marker {
   z-index: 2;
 }
 
+.main-tabs {
+  display: -ms-grid;
+  display: grid;
+}
+
+.main-tabs__navigation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+  width: 100%;
+}
+
+.main-tabs__navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.main-tabs__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 6rem;
+          flex: 0 0 6rem;
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.5rem;
+  justify-items: center;
+}
+
+.main-tabs__img-tab {
+  background: url("../img/main/circle.svg") 0 0/100% no-repeat;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 0.5rem;
+  max-width: 100%;
+}
+
+._tab-active .main-tabs__img-tab {
+  background: url("../img/main/circle-active.svg") 0 0/100% no-repeat;
+}
+
+.main-tabs__img-tab img {
+  width: 5rem;
+  height: 5rem;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.main-tabs__label {
+  color: rgb(124, 124, 124);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.main-tabs__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 2rem;
+}
+
+.main-tabs__image {
+  max-width: 100%;
+}
+
+.main-tabs__name {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.main-tabs__name:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.main-tabs__position {
+  display: block;
+  color: rgb(124, 124, 124);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.main-tabs__feedback {
+  color: rgb(19, 25, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+  /* 22/16 */
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.tabs-main__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tabs-main__navigation {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.9375rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tabs-main__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.tabs-main__title._tab-active {
+  background-color: #78dccd;
+}
+
+.tabs-main__title._tab-active span {
+  color: #fff;
+}
+
+.tabs-main__title._tab-active img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.tabs-main__title span {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 1.5rem;
+  color: rgba(19, 25, 35, 0.5);
+  text-align: right;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-main__title img {
+  display: none;
+  -o-object-position: left;
+     object-position: left;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.clinic-info {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.clinic-info__image {
+  max-width: 100%;
+}
+
+.clinic-info__body {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  row-gap: 2rem;
+}
+
+.clinic-info__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  row-gap: 0.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.clinic-info__title {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.clinic-info__achievements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 2rem;
+}
+
+.clinic-info__advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.clinic-info__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1.5rem;
+          flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  max-width: 100%;
+}
+
+.clinic-info__age {
+  color: rgb(19, 25, 35);
+  font-weight: 600;
+  line-height: 1.25;
+  /* 30/24 */
+}
+
+.clinic-info__label {
+  color: rgb(19, 25, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.31;
+}
+
+.clinic-info__count {
+  color: rgb(19, 25, 35);
+  font-weight: 600;
+  line-height: 1.25;
+  /* 30/24 */
+}
+
+.clinic-info__descr {
+  display: -ms-grid;
+  display: grid;
+}
+
+.clinic-info__text {
+  display: -ms-grid;
+  display: grid;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+}
+
+.clinic-info__more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clinic-info__more span {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  /* 100% */
+}
+
+.clinic-info__more span:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4.5rem;
+          flex: 0 0 4.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 16px;
+  background: #78dccd;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.clinic-info__more span:last-child::before {
+  content: "\e905";
+}
+
+.clinic-info__more span:first-child {
+  text-align: center;
+  min-width: 170px;
+  position: relative;
+  min-height: 72px;
+  border-radius: 20px;
+  padding: 1.75rem 1rem;
+  background: #1e78ff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.clinic-info__more span:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+      -ms-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+  background: url("../img/triangle-light.svg") 0 0/100% no-repeat;
+  width: 2.125rem;
+  height: 0.375rem;
+  z-index: 2;
+}
+
+.clinic-info__more span:first-child::before {
+  content: "";
+  background: url("../img/triangle-light.svg") 0 0/100% no-repeat;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px) rotate(180deg);
+      -ms-transform: translate(-50%, 0px) rotate(180deg);
+          transform: translate(-50%, 0px) rotate(180deg);
+  width: 2.125rem;
+  height: 0.375rem;
+  z-index: 2;
+}
+
 .parts-block {
   display: -ms-grid;
   display: grid;
@@ -2535,14 +2916,28 @@ details > summary::-webkit-details-marker {
   position: relative;
 }
 
-.question-block__title._spoller-active::after {
-  background-color: #78dccd;
-  border: 1px solid #78dccd;
+.breast-augmentation__question-block .question-block__title._spoller-active::after {
+  background-color: #1e78ff;
+  border: 1px solid #1e78ff;
+  color: #fff;
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+.breast-augmentation__question-block .question-block__title::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.question-block__title._spoller-active::after {
+  background-color: #78dccd;
+  border: 1px solid #78dccd;
   color: #fff;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 .question-block__title::after {
@@ -4425,6 +4820,10 @@ details > summary::-webkit-details-marker {
   /* 72.8px */
 }
 
+.portfolio__slider:not(:last-child) {
+  margin-bottom: 3.5rem;
+}
+
 .portfolio__slide.swiper-slide-active .my-slide-pagination {
   opacity: 1;
 }
@@ -4489,6 +4888,50 @@ details > summary::-webkit-details-marker {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   content: "\e900";
+}
+
+.portfolio__all-works {
+  display: block;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.portfolio__works {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.portfolio__works .portfolio__all-works {
+  margin: 0;
+}
+
+.portfolio__clients {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.portfolio__clients img {
+  max-width: 100%;
+}
+
+.portfolio__label {
+  display: block;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
 }
 
 .feedback-specialist__container {
@@ -5025,7 +5468,6 @@ details > summary::-webkit-details-marker {
 .trust-block__content {
   display: -ms-grid;
   display: grid;
-  justify-items: center;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 }
@@ -5037,13 +5479,13 @@ details > summary::-webkit-details-marker {
   -webkit-column-gap: 1.5rem;
      -moz-column-gap: 1.5rem;
           column-gap: 1.5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .trust-block__icon {
   width: 2.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 2.5rem;
+          flex: 0 0 2.5rem;
   height: 2.5rem;
   max-width: 100%;
 }
@@ -5493,6 +5935,377 @@ details > summary::-webkit-details-marker {
   row-gap: 1.75rem;
 }
 
+.breast-augmentation__image {
+  max-width: 100%;
+}
+
+.breast-augmentation__lists {
+  max-width: 69.625rem;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  row-gap: 6.5rem;
+}
+
+.info-breast {
+  margin: 0 auto;
+  max-width: 69.625rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  row-gap: 6.5rem;
+}
+
+.info-breast__content {
+  display: -ms-grid;
+  display: grid;
+}
+
+.info-breast__text {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+}
+
+.info-breast__text p {
+  display: inline;
+}
+
+.info-breast__patients {
+  max-width: 16.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+}
+
+.info-breast__label {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.info-breast__patient-img {
+  max-width: 100%;
+}
+
+.info-breast__consultation-form {
+  margin-top: 0;
+}
+
+.indications-list {
+  display: -ms-grid;
+  display: grid;
+}
+
+.indications-list__title {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.indications-list__items {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.indications-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+  /* 22/16 */
+}
+
+.indications-list__item::before {
+  content: "";
+  width: 0.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0.5rem;
+          flex: 0 0 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(120, 220, 205);
+}
+
+.contraindications-list {
+  display: -ms-grid;
+  display: grid;
+}
+
+.contraindications-list__title {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.contraindications-list__items {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.contraindications-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+  /* 22/16 */
+}
+
+.contraindications-list__item::before {
+  content: "";
+  width: 0.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0.5rem;
+          flex: 0 0 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(30, 120, 255);
+}
+
+.video-breast {
+  display: -ms-grid;
+  display: grid;
+}
+
+.video-breast__label {
+  color: rgb(19, 25, 35);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.steps-block {
+  margin: 0 auto;
+  max-width: 69.625rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.steps-block__list {
+  list-style-type: none;
+  counter-reset: item;
+  display: -ms-grid;
+  display: grid;
+}
+
+.steps-block__title {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 130%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+.steps-block__title::before {
+  counter-increment: item;
+  content: counter(item);
+  color: rgb(30, 120, 255);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.steps-block__text {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+}
+
+.steps-block__image {
+  max-width: 100%;
+}
+
+.prices-block__title {
+  color: rgb(19, 25, 35);
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.prices-block__subtitle {
+  color: rgb(19, 25, 35);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.prices-block__list {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.prices-block__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+}
+
+.prices-block__item:not(:last-child) {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(19, 25, 35, 0.4);
+}
+
+.prices-block__procedure {
+  color: rgb(19, 25, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.prices-block__value {
+  white-space: nowrap;
+  color: rgb(19, 25, 35);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.prices-block__label {
+  color: rgba(19, 25, 35, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.prices-block__all-works {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.prices-block__all-works span {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  /* 100% */
+}
+
+.prices-block__all-works span:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4.5rem;
+          flex: 0 0 4.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 16px;
+  background: #78dccd;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.prices-block__all-works span:last-child::before {
+  content: "\e905";
+}
+
+.prices-block__all-works span:first-child {
+  text-align: center;
+  min-width: 170px;
+  position: relative;
+  min-height: 72px;
+  border-radius: 20px;
+  padding: 1.75rem 1rem;
+  background: #1e78ff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.prices-block__all-works span:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+      -ms-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+  background: url("../img/triangle-light.svg") 0 0/100% no-repeat;
+  width: 2.125rem;
+  height: 0.375rem;
+  z-index: 2;
+}
+
+.prices-block__all-works span:first-child::before {
+  content: "";
+  background: url("../img/triangle-light.svg") 0 0/100% no-repeat;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px) rotate(180deg);
+      -ms-transform: translate(-50%, 0px) rotate(180deg);
+          transform: translate(-50%, 0px) rotate(180deg);
+  width: 2.125rem;
+  height: 0.375rem;
+  z-index: 2;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -5589,6 +6402,12 @@ details > summary::-webkit-details-marker {
     display: none;
   }
 
+  .clinic-info__more {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .form-feedback {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -5608,6 +6427,20 @@ details > summary::-webkit-details-marker {
 
   .trust-block__label {
     max-width: 15rem;
+  }
+
+  .steps-block {
+    justify-items: center;
+  }
+
+  .steps-block__text {
+    max-width: 32rem;
+  }
+
+  .prices-block__all-works {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
@@ -5698,6 +6531,50 @@ details > summary::-webkit-details-marker {
 
   .main-presentation__consultation:not(:last-child) {
     margin-bottom: 2.5rem;
+  }
+
+  .main-page {
+    margin-top: -28%;
+  }
+
+  .tabs-main__navigation {
+    -ms-grid-columns: (18.75rem)[3];
+    grid-template-columns: repeat(3, 18.75rem);
+  }
+
+  .tabs-main__title:last-child span {
+    max-width: 9.375rem;
+  }
+
+  .tabs-main__title {
+    min-height: 104px;
+    height: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .tabs-main__title img {
+    display: block;
+  }
+
+  .clinic-info__body {
+    justify-items: center;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clinic-info__achievements {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .clinic-info__text {
+    max-width: 28.125rem;
   }
 
   .parts-block__title._spoller-active::before {
@@ -6047,6 +6924,10 @@ details > summary::-webkit-details-marker {
     background: linear-gradient(-90deg, #fff 17.69%, rgba(255, 255, 255, 0) 100%);
   }
 
+  .portfolio__slider:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
   .portfolio__pagination {
     display: none;
   }
@@ -6110,6 +6991,17 @@ details > summary::-webkit-details-marker {
   .photo-gallery__pagination {
     display: none;
   }
+
+  .info-breast__text {
+    row-gap: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 @media (min-width: 61.99875em) and (min-width: 90em) {
@@ -6125,10 +7017,6 @@ details > summary::-webkit-details-marker {
 @media (min-width: 61.99875em) and (min-width: 84.375em) {
   .footer__row:nth-child(1) > * {
     padding-top: 5rem;
-  }
-
-  .question-block__item:not(:last-child) {
-    padding-bottom: 3.5rem;
   }
 
   .news__navigation:not(:last-child) {
@@ -6282,6 +7170,22 @@ details > summary::-webkit-details-marker {
     border-radius: 5rem;
   }
 
+  .page__breast-augmentation {
+    padding-top: 5rem;
+  }
+
+  .page__breast-augmentation {
+    padding-bottom: 12.5rem;
+  }
+
+  .page__breast-augmentation {
+    margin-top: 2.5rem;
+  }
+
+  .page__breast-augmentation {
+    border-radius: 5rem;
+  }
+
   .title {
     font-size: 6rem;
   }
@@ -6375,6 +7279,94 @@ details > summary::-webkit-details-marker {
     font-size: 1.5rem;
   }
 
+  .main-page__changes-links {
+    padding-top: 7.5rem;
+  }
+
+  .main-page__consultation-block {
+    padding-top: 12.5rem;
+  }
+
+  .main-page__tabs {
+    padding-top: 10rem;
+  }
+
+  .main-page__clinic {
+    padding-top: 7.5rem;
+  }
+
+  .main-tabs {
+    row-gap: 7.5rem;
+  }
+
+  .main-tabs__navigation {
+    -webkit-column-gap: 1.5rem;
+       -moz-column-gap: 1.5rem;
+            column-gap: 1.5rem;
+  }
+
+  .main-tabs__name {
+    font-size: 3.5rem;
+  }
+
+  .main-tabs__position:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .main-tabs__feedback:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .tabs-main__tabs {
+    row-gap: 3.5rem;
+  }
+
+  .tabs-main__navigation {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .tabs-main__title span {
+    font-size: 1.5rem;
+  }
+
+  .clinic-info__body {
+    -webkit-column-gap: 5rem;
+       -moz-column-gap: 5rem;
+            column-gap: 5rem;
+  }
+
+  .clinic-info__title {
+    font-size: 3.5rem;
+  }
+
+  .clinic-info__title:not(:last-child) {
+    margin-bottom: 4.5rem;
+  }
+
+  .clinic-info__achievements {
+    -webkit-column-gap: 5.5rem;
+       -moz-column-gap: 5.5rem;
+            column-gap: 5.5rem;
+  }
+
+  .clinic-info__age {
+    font-size: 1.5rem;
+  }
+
+  .clinic-info__count {
+    font-size: 1.5rem;
+  }
+
+  .clinic-info__descr {
+    row-gap: 3.5rem;
+  }
+
+  .clinic-info__text {
+    row-gap: 2.5rem;
+  }
+
   .price-block__title:not(:last-child) {
     margin-bottom: 7.5rem;
   }
@@ -6409,6 +7401,10 @@ details > summary::-webkit-details-marker {
 
   .question-block__title:not(:last-child) {
     margin-bottom: 2.5rem;
+  }
+
+  .question-block__body {
+    padding-bottom: 3.5rem;
   }
 
   .search-page__title:not(:last-child) {
@@ -6974,6 +7970,110 @@ details > summary::-webkit-details-marker {
   .clinic-base__title:not(:last-child) {
     margin-bottom: 5rem;
   }
+
+  .breast-augmentation__title:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .breast-augmentation__image:not(:last-child) {
+    margin-bottom: 7.5rem;
+  }
+
+  .breast-augmentation__info:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__lists:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__video:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__steps:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__trust-block:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__portfolio:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__prices:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .breast-augmentation__consultation-block:not(:last-child) {
+    margin-bottom: 12.5rem;
+  }
+
+  .info-breast__content {
+    row-gap: 6.25rem;
+  }
+
+  .indications-list {
+    row-gap: 3rem;
+  }
+
+  .indications-list__title {
+    font-size: 2.5rem;
+  }
+
+  .contraindications-list {
+    row-gap: 3rem;
+  }
+
+  .contraindications-list__title {
+    font-size: 2.5rem;
+  }
+
+  .video-breast {
+    row-gap: 2rem;
+  }
+
+  .video-breast__label {
+    font-size: 1.5rem;
+  }
+
+  .steps-block__list {
+    row-gap: 5rem;
+  }
+
+  .steps-block__title {
+    font-size: 2.5rem;
+  }
+
+  .steps-block__title::before {
+    font-size: 2.5rem;
+  }
+
+  .steps-block__title:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .prices-block__title {
+    font-size: 3.5rem;
+  }
+
+  .prices-block__title:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .prices-block__subtitle {
+    font-size: 2rem;
+  }
+
+  .prices-block__subtitle:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .prices-block__body:not(:last-child) {
+    margin-bottom: 5rem;
+  }
 }
 
 @media (min-width: 62em) {
@@ -7045,6 +8145,12 @@ details > summary::-webkit-details-marker {
 }
 
 @media (min-width: 120em) {
+  .main-tabs__item {
+    -webkit-column-gap: 7.5rem;
+       -moz-column-gap: 7.5rem;
+            column-gap: 7.5rem;
+  }
+
   .feedback-page__tabs {
     row-gap: 6.5rem;
   }
@@ -7079,6 +8185,24 @@ details > summary::-webkit-details-marker {
     -webkit-column-gap: 7.5rem;
        -moz-column-gap: 7.5rem;
             column-gap: 7.5rem;
+  }
+
+  .breast-augmentation__lists {
+    -webkit-column-gap: 5.5rem;
+       -moz-column-gap: 5.5rem;
+            column-gap: 5.5rem;
+  }
+
+  .info-breast {
+    -webkit-column-gap: 7.5rem;
+       -moz-column-gap: 7.5rem;
+            column-gap: 7.5rem;
+  }
+
+  .steps-block {
+    -webkit-column-gap: 6.25rem;
+       -moz-column-gap: 6.25rem;
+            column-gap: 6.25rem;
   }
 }
 
@@ -7139,6 +8263,12 @@ details > summary::-webkit-details-marker {
             column-gap: 1.25rem;
   }
 
+  .main-tabs__item {
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+
   .feedback-page__tabs {
     row-gap: 2.5rem;
   }
@@ -7170,6 +8300,24 @@ details > summary::-webkit-details-marker {
   }
 
   .clinic-base {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .breast-augmentation__lists {
+    -webkit-column-gap: 2.1875rem;
+       -moz-column-gap: 2.1875rem;
+            column-gap: 2.1875rem;
+  }
+
+  .info-breast {
+    -webkit-column-gap: 1.875rem;
+       -moz-column-gap: 1.875rem;
+            column-gap: 1.875rem;
+  }
+
+  .steps-block {
     -webkit-column-gap: 2.5rem;
        -moz-column-gap: 2.5rem;
             column-gap: 2.5rem;
@@ -7398,6 +8546,25 @@ details > summary::-webkit-details-marker {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+  }
+
+  .tabs-main__title span {
+    padding: 0.875rem 1.25rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .clinic-info__body {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .clinic-info__label span {
+    display: none;
+  }
+
+  .clinic-info__more span:first-child {
+    width: 100%;
   }
 
   .tabs-faq__title span {
@@ -7698,6 +8865,15 @@ details > summary::-webkit-details-marker {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+
+  .breast-augmentation__lists {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .prices-block__all-works span:first-child {
+    width: 100%;
+  }
 }
 
 @media (max-width: 61.99875em) and (any-hover: none) {
@@ -7761,6 +8937,15 @@ details > summary::-webkit-details-marker {
             justify-content: space-between;
   }
 
+  .main-tabs__item {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .main-tabs__videoreview-btn {
+    width: 100%;
+  }
+
   .tabs-faq__navigation {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -7805,6 +8990,14 @@ details > summary::-webkit-details-marker {
     height: 3.5rem;
   }
 
+  .portfolio__all-works {
+    width: 100%;
+  }
+
+  .portfolio__clients {
+    display: none;
+  }
+
   .feedback-specialist__name {
     display: none;
   }
@@ -7825,6 +9018,20 @@ details > summary::-webkit-details-marker {
         -ms-flex: 0 0 3.5rem;
             flex: 0 0 3.5rem;
     height: 3.5rem;
+  }
+
+  .info-breast {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .steps-block {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .steps-block__image {
+    display: none;
   }
 }
 
@@ -8098,6 +9305,22 @@ details > summary::-webkit-details-marker {
     border-radius: 2rem;
   }
 
+  .page__breast-augmentation {
+    padding-top: 3rem;
+  }
+
+  .page__breast-augmentation {
+    padding-bottom: 6.5rem;
+  }
+
+  .page__breast-augmentation {
+    margin-top: 1.5rem;
+  }
+
+  .page__breast-augmentation {
+    border-radius: 2rem;
+  }
+
   .title {
     font-size: 2rem;
   }
@@ -8197,6 +9420,94 @@ details > summary::-webkit-details-marker {
     font-size: 1rem;
   }
 
+  .main-page__changes-links {
+    padding-top: 6.5rem;
+  }
+
+  .main-page__consultation-block {
+    padding-top: 6.5rem;
+  }
+
+  .main-page__tabs {
+    padding-top: 6.5rem;
+  }
+
+  .main-page__clinic {
+    padding-top: 6.5rem;
+  }
+
+  .main-tabs {
+    row-gap: 3rem;
+  }
+
+  .main-tabs__navigation {
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+
+  .main-tabs__name {
+    font-size: 2rem;
+  }
+
+  .main-tabs__position:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .main-tabs__feedback:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .tabs-main__tabs {
+    row-gap: 1.5rem;
+  }
+
+  .tabs-main__navigation {
+    -webkit-column-gap: 0.75rem;
+       -moz-column-gap: 0.75rem;
+            column-gap: 0.75rem;
+  }
+
+  .tabs-main__title span {
+    font-size: 1rem;
+  }
+
+  .clinic-info__body {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+
+  .clinic-info__title {
+    font-size: 2rem;
+  }
+
+  .clinic-info__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .clinic-info__achievements {
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+
+  .clinic-info__age {
+    font-size: 1rem;
+  }
+
+  .clinic-info__count {
+    font-size: 1rem;
+  }
+
+  .clinic-info__descr {
+    row-gap: 3rem;
+  }
+
+  .clinic-info__text {
+    row-gap: 2rem;
+  }
+
   .price-block__title:not(:last-child) {
     margin-bottom: 2.5rem;
   }
@@ -8231,6 +9542,10 @@ details > summary::-webkit-details-marker {
 
   .question-block__title:not(:last-child) {
     margin-bottom: 1.5rem;
+  }
+
+  .question-block__body {
+    padding-bottom: 0.625rem;
   }
 
   .search-page__title:not(:last-child) {
@@ -8800,6 +10115,110 @@ details > summary::-webkit-details-marker {
   .clinic-base__title:not(:last-child) {
     margin-bottom: 2.5rem;
   }
+
+  .breast-augmentation__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .breast-augmentation__image:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .breast-augmentation__info:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__lists:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__video:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__steps:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__trust-block:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__portfolio:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__prices:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .breast-augmentation__consultation-block:not(:last-child) {
+    margin-bottom: 6.5rem;
+  }
+
+  .info-breast__content {
+    row-gap: 2.5rem;
+  }
+
+  .indications-list {
+    row-gap: 2rem;
+  }
+
+  .indications-list__title {
+    font-size: 2rem;
+  }
+
+  .contraindications-list {
+    row-gap: 2rem;
+  }
+
+  .contraindications-list__title {
+    font-size: 2rem;
+  }
+
+  .video-breast {
+    row-gap: 1rem;
+  }
+
+  .video-breast__label {
+    font-size: 1rem;
+  }
+
+  .steps-block__list {
+    row-gap: 3rem;
+  }
+
+  .steps-block__title {
+    font-size: 2rem;
+  }
+
+  .steps-block__title::before {
+    font-size: 2rem;
+  }
+
+  .steps-block__title:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .prices-block__title {
+    font-size: 2rem;
+  }
+
+  .prices-block__title:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .prices-block__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .prices-block__subtitle:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .prices-block__body:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
 }
 
 @media (min-width: 62em) and (max-width: 90em) {
@@ -9205,6 +10624,54 @@ details > summary::-webkit-details-marker {
     }
 }
 
+@supports (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__breast-augmentation {
+      padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .page__breast-augmentation {
+      padding-top: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__breast-augmentation {
+      padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .page__breast-augmentation {
+      padding-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-top: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .page__breast-augmentation {
+      margin-top: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
+    .page__breast-augmentation {
+      margin-top: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__breast-augmentation {
+      border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (border-radius: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .page__breast-augmentation {
+      border-radius: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
 @supports (font-size: clamp( 2rem , 0.4615384615rem  +  6.5641025641vw , 6rem )) {
     .title {
       font-size: clamp( 2rem , 0.4615384615rem  +  6.5641025641vw , 6rem );
@@ -9479,6 +10946,262 @@ details > summary::-webkit-details-marker {
     }
 }
 
+@supports (padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem )) {
+    .main-page__changes-links {
+      padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem )) {
+    .main-page__changes-links {
+      padding-top: calc(6.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .main-page__consultation-block {
+      padding-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .main-page__consultation-block {
+      padding-top: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-top: clamp( 6.5rem , 5.1538461538rem  +  5.7435897436vw , 10rem )) {
+    .main-page__tabs {
+      padding-top: clamp( 6.5rem , 5.1538461538rem  +  5.7435897436vw , 10rem );
+    }
+}
+
+@supports not (padding-top: clamp( 6.5rem , 5.1538461538rem  +  5.7435897436vw , 10rem )) {
+    .main-page__tabs {
+      padding-top: calc(6.5rem + 3.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem )) {
+    .main-page__clinic {
+      padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 6.5rem , 6.1153846154rem  +  1.641025641vw , 7.5rem )) {
+    .main-page__clinic {
+      padding-top: calc(6.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 3rem , 1.2692307692rem  +  7.3846153846vw , 7.5rem )) {
+    .main-tabs {
+      row-gap: clamp( 3rem , 1.2692307692rem  +  7.3846153846vw , 7.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 3rem , 1.2692307692rem  +  7.3846153846vw , 7.5rem )) {
+    .main-tabs {
+      row-gap: calc(3rem + 4.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) or (column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem ))) {
+    .main-tabs__navigation {
+      -webkit-column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+         -moz-column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+              column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) or (column-gap: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem ))) {
+    .main-tabs__navigation {
+      -webkit-column-gap: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .main-tabs__name {
+      font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .main-tabs__name {
+      font-size: calc(2rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .main-tabs__position:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.1153846154rem  +  1.641025641vw , 3.5rem )) {
+    .main-tabs__position:not(:last-child) {
+      margin-bottom: calc(2.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem )) {
+    .main-tabs__feedback:not(:last-child) {
+      margin-bottom: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem )) {
+    .main-tabs__feedback:not(:last-child) {
+      margin-bottom: calc(3rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 1.5rem , 0.7307692308rem  +  3.2820512821vw , 3.5rem )) {
+    .tabs-main__tabs {
+      row-gap: clamp( 1.5rem , 0.7307692308rem  +  3.2820512821vw , 3.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1.5rem , 0.7307692308rem  +  3.2820512821vw , 3.5rem )) {
+    .tabs-main__tabs {
+      row-gap: calc(1.5rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem )) or (column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem ))) {
+    .tabs-main__navigation {
+      -webkit-column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem );
+         -moz-column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem );
+              column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem )) or (column-gap: clamp( 0.75rem , 0.0769230769rem  +  2.8717948718vw , 2.5rem ))) {
+    .tabs-main__navigation {
+      -webkit-column-gap: calc(0.75rem + 1.75 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(0.75rem + 1.75 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(0.75rem + 1.75 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-main__title span {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .tabs-main__title span {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem )) or (column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem ))) {
+    .clinic-info__body {
+      -webkit-column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem );
+         -moz-column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem );
+              column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem )) or (column-gap: clamp( 2.5rem , 1.5384615385rem  +  4.1025641026vw , 5rem ))) {
+    .clinic-info__body {
+      -webkit-column-gap: calc(2.5rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(2.5rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(2.5rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .clinic-info__title {
+      font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .clinic-info__title {
+      font-size: calc(2rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2rem , 1.0384615385rem  +  4.1025641026vw , 4.5rem )) {
+    .clinic-info__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 1.0384615385rem  +  4.1025641026vw , 4.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 1.0384615385rem  +  4.1025641026vw , 4.5rem )) {
+    .clinic-info__title:not(:last-child) {
+      margin-bottom: calc(2rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem )) or (column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem ))) {
+    .clinic-info__achievements {
+      -webkit-column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem );
+         -moz-column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem );
+              column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem )) or (column-gap: clamp( 2rem , 0.6538461538rem  +  5.7435897436vw , 5.5rem ))) {
+    .clinic-info__achievements {
+      -webkit-column-gap: calc(2rem + 3.5 * (100vw - 23.4375rem) / 60.9375);
+         -moz-column-gap: calc(2rem + 3.5 * (100vw - 23.4375rem) / 60.9375);
+              column-gap: calc(2rem + 3.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .clinic-info__age {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .clinic-info__age {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .clinic-info__count {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .clinic-info__count {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem )) {
+    .clinic-info__descr {
+      row-gap: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 3rem , 2.8076923077rem  +  0.8205128205vw , 3.5rem )) {
+    .clinic-info__descr {
+      row-gap: calc(3rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .clinic-info__text {
+      row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .clinic-info__text {
+      row-gap: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
 @supports (margin-bottom: clamp( 2.5rem , 0.5769230769rem  +  8.2051282051vw , 7.5rem )) {
     .price-block__title:not(:last-child) {
       margin-bottom: clamp( 2.5rem , 0.5769230769rem  +  8.2051282051vw , 7.5rem );
@@ -9584,6 +11307,18 @@ details > summary::-webkit-details-marker {
 @supports not (margin-bottom: clamp( 1.5rem , 1.1153846154rem  +  1.641025641vw , 2.5rem )) {
     .question-block__title:not(:last-child) {
       margin-bottom: calc(1.5rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem )) {
+    .question-block__body {
+      padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem )) {
+    .question-block__body {
+      padding-bottom: calc(0.625rem + 2.875 * (100vw - 23.4375rem) / 60.9375);
     }
 }
 
@@ -11246,6 +12981,318 @@ details > summary::-webkit-details-marker {
       margin-bottom: calc(2.5rem + 2.5 * (100vw - 23.4375rem) / 60.9375);
     }
 }
+
+@supports (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .breast-augmentation__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 0.8461538462rem  +  4.9230769231vw , 5rem )) {
+    .breast-augmentation__title:not(:last-child) {
+      margin-bottom: calc(2rem + 3 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2.5rem , 0.5769230769rem  +  8.2051282051vw , 7.5rem )) {
+    .breast-augmentation__image:not(:last-child) {
+      margin-bottom: clamp( 2.5rem , 0.5769230769rem  +  8.2051282051vw , 7.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 0.5769230769rem  +  8.2051282051vw , 7.5rem )) {
+    .breast-augmentation__image:not(:last-child) {
+      margin-bottom: calc(2.5rem + 5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__info:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__info:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__lists:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__lists:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__video:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__video:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__steps:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__steps:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__trust-block:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__trust-block:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__portfolio:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__portfolio:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__prices:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__prices:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__consultation-block:not(:last-child) {
+      margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 6.5rem , 4.1923076923rem  +  9.8461538462vw , 12.5rem )) {
+    .breast-augmentation__consultation-block:not(:last-child) {
+      margin-bottom: calc(6.5rem + 6 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2.5rem , 1.0576923077rem  +  6.1538461538vw , 6.25rem )) {
+    .info-breast__content {
+      row-gap: clamp( 2.5rem , 1.0576923077rem  +  6.1538461538vw , 6.25rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2.5rem , 1.0576923077rem  +  6.1538461538vw , 6.25rem )) {
+    .info-breast__content {
+      row-gap: calc(2.5rem + 3.75 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .indications-list {
+      row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .indications-list {
+      row-gap: calc(2rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .indications-list__title {
+      font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .indications-list__title {
+      font-size: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .contraindications-list {
+      row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .contraindications-list {
+      row-gap: calc(2rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .contraindications-list__title {
+      font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .contraindications-list__title {
+      font-size: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem )) {
+    .video-breast {
+      row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1rem , 0.6153846154rem  +  1.641025641vw , 2rem )) {
+    .video-breast {
+      row-gap: calc(1rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .video-breast__label {
+      font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8076923077rem  +  0.8205128205vw , 1.5rem )) {
+    .video-breast__label {
+      font-size: calc(1rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (row-gap: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .steps-block__list {
+      row-gap: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (row-gap: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .steps-block__list {
+      row-gap: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .steps-block__title {
+      font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .steps-block__title {
+      font-size: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .steps-block__title::before {
+      font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.8076923077rem  +  0.8205128205vw , 2.5rem )) {
+    .steps-block__title::before {
+      font-size: calc(2rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .steps-block__title:not(:last-child) {
+      margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .steps-block__title:not(:last-child) {
+      margin-bottom: calc(2rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .prices-block__title {
+      font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.4230769231rem  +  2.4615384615vw , 3.5rem )) {
+    .prices-block__title {
+      font-size: calc(2rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .prices-block__title:not(:last-child) {
+      margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 3rem , 2.2307692308rem  +  3.2820512821vw , 5rem )) {
+    .prices-block__title:not(:last-child) {
+      margin-bottom: calc(3rem + 2 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (font-size: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem )) {
+    .prices-block__subtitle {
+      font-size: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.3076923077rem  +  0.8205128205vw , 2rem )) {
+    .prices-block__subtitle {
+      font-size: calc(1.5rem + 0.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .prices-block__subtitle:not(:last-child) {
+      margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2rem , 1.6153846154rem  +  1.641025641vw , 3rem )) {
+    .prices-block__subtitle:not(:last-child) {
+      margin-bottom: calc(2rem + 1 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
+
+@supports (margin-bottom: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem )) {
+    .prices-block__body:not(:last-child) {
+      margin-bottom: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 3.5rem , 2.9230769231rem  +  2.4615384615vw , 5rem )) {
+    .prices-block__body:not(:last-child) {
+      margin-bottom: calc(3.5rem + 1.5 * (100vw - 23.4375rem) / 60.9375);
+    }
+}
 }
 
 @media (min-width: 62.5em) and (max-width: 90em) {
@@ -11347,18 +13394,6 @@ details > summary::-webkit-details-marker {
     }
 }
 
-@supports (padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem )) {
-    .question-block__item:not(:last-child) {
-      padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 0.625rem , -0.4807692308rem  +  4.7179487179vw , 3.5rem )) {
-    .question-block__item:not(:last-child) {
-      padding-bottom: calc(0.625rem + 2.875 * (100vw - 23.4375rem) / 60.9375);
-    }
-}
-
 @supports (margin-bottom: clamp( 1.5625rem , -0.3365384615rem  +  8.1025641026vw , 6.5rem )) {
     .news__navigation:not(:last-child) {
       margin-bottom: clamp( 1.5625rem , -0.3365384615rem  +  8.1025641026vw , 6.5rem );
@@ -11387,10 +13422,6 @@ details > summary::-webkit-details-marker {
 @media (min-width: 61.99875em) and (max-width: 23.4375em) {
   .footer__row:nth-child(1) > * {
     padding-top: 3.25rem;
-  }
-
-  .question-block__item:not(:last-child) {
-    padding-bottom: 0.625rem;
   }
 
   .news__navigation:not(:last-child) {
@@ -11423,6 +13454,22 @@ details > summary::-webkit-details-marker {
 }
 
 @media (min-width: 62em) and (max-width: 120em) {
+@supports ((-moz-column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem )) or (column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem ))) {
+    .main-tabs__item {
+      -webkit-column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem );
+         -moz-column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem );
+              column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem )) or (column-gap: clamp( 2rem , -3.8793103448rem  +  9.4827586207vw , 7.5rem ))) {
+    .main-tabs__item {
+      -webkit-column-gap: calc(2rem + 5.5 * (100vw - 62rem) / 58);
+         -moz-column-gap: calc(2rem + 5.5 * (100vw - 62rem) / 58);
+              column-gap: calc(2rem + 5.5 * (100vw - 62rem) / 58);
+    }
+}
+
 @supports (row-gap: clamp( 2.5rem , -1.775862069rem  +  6.8965517241vw , 6.5rem )) {
     .feedback-page__tabs {
       row-gap: clamp( 2.5rem , -1.775862069rem  +  6.8965517241vw , 6.5rem );
@@ -11526,6 +13573,54 @@ details > summary::-webkit-details-marker {
               column-gap: calc(2.5rem + 5 * (100vw - 62rem) / 58);
     }
 }
+
+@supports ((-moz-column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem )) or (column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem ))) {
+    .breast-augmentation__lists {
+      -webkit-column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem );
+         -moz-column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem );
+              column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem )) or (column-gap: clamp( 2.1875rem , -1.3534482759rem  +  5.7112068966vw , 5.5rem ))) {
+    .breast-augmentation__lists {
+      -webkit-column-gap: calc(2.1875rem + 3.3125 * (100vw - 62rem) / 58);
+         -moz-column-gap: calc(2.1875rem + 3.3125 * (100vw - 62rem) / 58);
+              column-gap: calc(2.1875rem + 3.3125 * (100vw - 62rem) / 58);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem )) or (column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem ))) {
+    .info-breast {
+      -webkit-column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem );
+         -moz-column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem );
+              column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem )) or (column-gap: clamp( 1.875rem , -4.1379310345rem  +  9.6982758621vw , 7.5rem ))) {
+    .info-breast {
+      -webkit-column-gap: calc(1.875rem + 5.625 * (100vw - 62rem) / 58);
+         -moz-column-gap: calc(1.875rem + 5.625 * (100vw - 62rem) / 58);
+              column-gap: calc(1.875rem + 5.625 * (100vw - 62rem) / 58);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem )) or (column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem ))) {
+    .steps-block {
+      -webkit-column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem );
+         -moz-column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem );
+              column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem )) or (column-gap: clamp( 2.5rem , -1.5086206897rem  +  6.4655172414vw , 6.25rem ))) {
+    .steps-block {
+      -webkit-column-gap: calc(2.5rem + 3.75 * (100vw - 62rem) / 58);
+         -moz-column-gap: calc(2.5rem + 3.75 * (100vw - 62rem) / 58);
+              column-gap: calc(2.5rem + 3.75 * (100vw - 62rem) / 58);
+    }
+}
 }
 
 @media (max-width: 61.99875em) and (min-width: 48em) {
@@ -11609,6 +13704,19 @@ details > summary::-webkit-details-marker {
 
   .spollers-footer__link:hover {
     color: rgba(255, 255, 255, 0.95);
+  }
+
+  .tabs-main__title:hover {
+    background-color: #78dccd;
+  }
+
+  .tabs-main__title:hover span {
+    color: #fff;
+  }
+
+  .tabs-main__title:hover img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
   }
 
   .tabs-faq__title:hover {
