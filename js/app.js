@@ -5377,7 +5377,7 @@
         const searchInput = document.querySelector(".search-page__input");
         if (searchInput) searchInput.value = searchQuery;
     }));
-    window["FLS"] = true;
+    window["FLS"] = false;
     isWebp();
     menuInit();
     spollers();

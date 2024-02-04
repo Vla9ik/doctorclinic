@@ -2346,9 +2346,6 @@ details > summary::-webkit-details-marker {
 }
 
 .main-tabs__navigation {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2475,7 +2472,6 @@ details > summary::-webkit-details-marker {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
   overflow: hidden;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -6402,6 +6398,14 @@ details > summary::-webkit-details-marker {
     display: none;
   }
 
+  .main-tabs__navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
   .clinic-info__more {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -6513,6 +6517,12 @@ details > summary::-webkit-details-marker {
   .main-presentation__container {
     -ms-grid-columns: auto 65%;
     grid-template-columns: auto 65%;
+  }
+
+  .main-presentation__first-bg {
+    -webkit-transform: translate(10%, 0px);
+        -ms-transform: translate(10%, 0px);
+            transform: translate(10%, 0px);
   }
 
   .main-presentation__second-bg {
