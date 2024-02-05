@@ -1163,12 +1163,44 @@ body::after {
 }
 
 .popup__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
   -ms-grid-column-align: end;
       justify-self: end;
   width: 1.5rem;
   height: 1.5rem;
   border: 0.0625rem solid rgba(19, 25, 35, 0.6);
   border-radius: 50%;
+}
+
+.popup__close::before,
+.popup__close::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #000;
+}
+
+.popup__close::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.popup__close::after {
+  content: "";
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .form-consultation__title {
